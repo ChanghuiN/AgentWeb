@@ -23,6 +23,7 @@ import com.just.agentweb.AgentWeb;
 import com.just.agentweb.client.DefaultWebClient;
 import com.just.agentweb.sample.R;
 import com.just.agentweb.sample.widget.WebLayout;
+import com.just.agentweb.security.SecurityType;
 
 /**
  * Created by cenxiaozhong on 2017/5/26.
@@ -74,7 +75,7 @@ public class BaseWebActivity extends AppCompatActivity {
                 .setWebChromeClient(mWebChromeClient)
                 .setWebViewClient(mWebViewClient)
                 .setMainFrameErrorView(R.layout.agentweb_error_page, -1)
-                .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
+                .setSecurityType(SecurityType.STRICT_CHECK)
                 .setWebLayout(new WebLayout(this))
                 .setOpenOtherPageWays(DefaultWebClient.OpenOtherPageWays.ASK)//打开其他应用时，弹窗咨询用户是否前往其他应用
                 .interceptUnkownUrl() //拦截找不到相关页面的Scheme

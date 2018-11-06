@@ -13,6 +13,7 @@ import com.github.lzyzsd.jsbridge.BridgeWebViewClient;
 import com.github.lzyzsd.jsbridge.CallBackFunction;
 import com.google.gson.Gson;
 import com.just.agentweb.AgentWeb;
+import com.just.agentweb.security.SecurityType;
 
 /**
  * Created by cenxiaozhong on 2017/7/1.
@@ -49,7 +50,7 @@ public class JsbridgeWebFragment extends AgentWebFragment {
                 .setWebViewClient(new BridgeWebViewClient(mBridgeWebView))
                 .setWebChromeClient(mWebChromeClient)
                 .setWebView(mBridgeWebView)
-                .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
+                .setSecurityType(SecurityType.STRICT_CHECK)
 //                .setDownloadListener(mDownloadListener) 4.0.0 删除该API
                 .createAgentWeb()//
                 .ready()//

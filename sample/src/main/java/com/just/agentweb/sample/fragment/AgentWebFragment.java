@@ -30,13 +30,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-//import com.just.agentweb.DefaultAgentWebSettings;
+//import com.just.agentweb.client.DefaultAgentWebSettings;
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
 //import com.just.agentweb.AgentWebSettingsImpl;
-import com.just.agentweb.DefaultAgentWebSettings;
+import com.just.agentweb.client.DefaultAgentWebSettings;
 import com.just.agentweb.client.DefaultWebClient;
-import com.just.agentweb.IAgentWebSettings;
+import com.just.agentweb.client.IAgentWebSettings;
+import com.just.agentweb.security.SecurityType;
 import com.just.agentweb.utils.LogUtils;
 //import com.just.agentweb.MiddlewareWebChromeBase;
 //import com.just.agentweb.MiddlewareWebClientBase;
@@ -105,7 +106,7 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 				.setWebViewClient(mWebViewClient)//WebViewClient ， 与 WebView 使用一致 ，但是请勿获取WebView调用setWebViewClient(xx)方法了,会覆盖AgentWeb DefaultWebClient,同时相应的中间件也会失效。
 				.setWebChromeClient(mWebChromeClient) //WebChromeClient
 				.setPermissionInterceptor(mPermissionInterceptor) //权限拦截 2.0.0 加入。
-				.setSecurityType(AgentWeb.SecurityType.STRICT_CHECK) //严格模式 Android 4.2.2 以下会放弃注入对象 ，使用AgentWebView没影响。
+				.setSecurityType(SecurityType.STRICT_CHECK) //严格模式 Android 4.2.2 以下会放弃注入对象 ，使用AgentWebView没影响。
 				.setAgentWebUIController(new UIController(getActivity())) //自定义UI  AgentWeb3.0.0 加入。
 				.setMainFrameErrorView(R.layout.agentweb_error_page, -1) //参数1是错误显示的布局，参数2点击刷新控件ID -1表示点击整个布局都刷新， AgentWeb 3.0.0 加入。
 //				.useMiddlewareWebChrome(getMiddlewareWebChrome()) //设置WebChromeClient中间件，支持多个WebChromeClient，AgentWeb 3.0.0 加入。

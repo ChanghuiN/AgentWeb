@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.client.DefaultWebClient;
+import com.just.agentweb.security.SecurityType;
 import com.just.agentweb.view.IWebLayout;
 import com.just.agentweb.sample.R;
 import com.just.agentweb.sample.widget.WebLayout;
@@ -48,7 +49,7 @@ public class BounceWebFragment extends AgentWebFragment {
 				.setWebViewClient(mWebViewClient)
 				.setWebChromeClient(mWebChromeClient)
 				.setWebLayout(getWebLayout())
-				.setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
+				.setSecurityType(SecurityType.STRICT_CHECK)
 //                .setDownloadListener(mDownloadListener)  4.0.0 删除该API
 				.interceptUnkownUrl()
 				.setOpenOtherPageWays(DefaultWebClient.OpenOtherPageWays.ASK)

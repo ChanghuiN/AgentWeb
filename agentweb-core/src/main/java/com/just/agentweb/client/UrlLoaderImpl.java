@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.client;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -33,15 +33,15 @@ public class UrlLoaderImpl implements IUrlLoader {
 
 	private Handler mHandler = null;
 	private WebView mWebView;
-	private HttpHeaders mHttpHeaders;
+//	private HttpHeaders mHttpHeaders;
 
-	UrlLoaderImpl(WebView webView, HttpHeaders httpHeaders) {
+	public UrlLoaderImpl(WebView webView) {
 		this.mWebView = webView;
 		if (this.mWebView == null) {
 			new NullPointerException("webview cannot be null .");
 		}
 
-		this.mHttpHeaders = httpHeaders;
+//		this.mHttpHeaders = httpHeaders;
 		mHandler = new Handler(Looper.getMainLooper());
 	}
 
@@ -168,8 +168,8 @@ public class UrlLoaderImpl implements IUrlLoader {
 		this.mWebView.postUrl(url, postData);
 	}
 
-	@Override
-	public HttpHeaders getHttpHeaders() {
-		return this.mHttpHeaders == null ? this.mHttpHeaders = HttpHeaders.create() : this.mHttpHeaders;
-	}
+//	@Override
+//	public HttpHeaders getHttpHeaders() {
+//		return this.mHttpHeaders == null ? this.mHttpHeaders = HttpHeaders.create() : this.mHttpHeaders;
+//	}
 }

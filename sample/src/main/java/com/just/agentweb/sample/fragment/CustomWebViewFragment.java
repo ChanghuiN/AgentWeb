@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.sample.R;
+import com.just.agentweb.security.SecurityType;
 
 import us.feras.mdv.MarkdownView;
 
@@ -54,7 +55,7 @@ public class CustomWebViewFragment extends AgentWebFragment {
                 .closeIndicator()//
                 .setWebViewClient(mWebViewClient)
                 .setWebView(mMarkdownWebView)
-                .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
+                .setSecurityType(SecurityType.STRICT_CHECK)
                 .createAgentWeb()//
                 .ready()//
                 .go(null);

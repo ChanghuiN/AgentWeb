@@ -37,7 +37,6 @@ import java.util.Set;
  */
 public class VideoImpl implements IVideo, EventInterceptor {
 
-
     private Activity mActivity;
     private WebView mWebView;
     private static final String TAG = VideoImpl.class.getSimpleName();

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.client;
 
 import java.util.Map;
 
@@ -42,5 +42,5 @@ public interface IUrlLoader {
 
 	void postUrl(String url, byte[] params);
 
-	HttpHeaders getHttpHeaders();
+//	HttpHeaders getHttpHeaders();
 }

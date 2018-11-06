@@ -32,7 +32,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.just.agentweb.client.DefaultAgentWebSettings;
 import com.just.agentweb.client.DefaultChromeClient;
+import com.just.agentweb.client.IAgentWebSettings;
+import com.just.agentweb.client.IUrlLoader;
+import com.just.agentweb.client.UrlLoaderImpl;
 import com.just.agentweb.filechooser.AgentWebJsInterfaceCompat;
 import com.just.agentweb.js.JsAccessEntrace;
 import com.just.agentweb.js.JsAccessEntraceImpl;
@@ -225,7 +229,7 @@ public final class AgentWeb {
 		}
 		this.mPermissionInterceptor = agentBuilder.mPermissionInterceptor == null ? null : new PermissionInterceptorWrapper(agentBuilder.mPermissionInterceptor);
 		this.mSecurityType = agentBuilder.mSecurityType;
-		this.mIUrlLoader = new UrlLoaderImpl(mWebCreator.create().getWebView(), agentBuilder.mHttpHeaders);
+		this.mIUrlLoader = new UrlLoaderImpl(mWebCreator.create().getWebView());
 		if (this.mWebCreator.getWebParentLayout() instanceof WebParentLayout) {
 			WebParentLayout mWebParentLayout = (WebParentLayout) this.mWebCreator.getWebParentLayout();
 			mWebParentLayout.bindController(agentBuilder.mAgentWebUIController == null ? AgentWebUIControllerImplBase.build() : agentBuilder.mAgentWebUIController);
@@ -537,7 +541,7 @@ public final class AgentWeb {
 		private int mIndicatorColor = -1;
 		private IAgentWebSettings mAgentWebSettings;
 		private WebCreator mWebCreator;
-		private HttpHeaders mHttpHeaders = null;
+//		private HttpHeaders mHttpHeaders = null;
 		private IEventHandler mIEventHandler;
 		private int mHeight = -1;
 		private ArrayMap<String, Object> mJavaObject;
@@ -599,14 +603,14 @@ public final class AgentWeb {
 			mJavaObject.put(key, o);
 		}
 
-		private void addHeader(String k, String v) {
-
-			if (mHttpHeaders == null) {
-				mHttpHeaders = HttpHeaders.create();
-			}
-			mHttpHeaders.additionalHttpHeader(k, v);
-
-		}
+//		private void addHeader(String k, String v) {
+//
+//			if (mHttpHeaders == null) {
+//				mHttpHeaders = HttpHeaders.create();
+//			}
+//			mHttpHeaders.additionalHttpHeader(k, v);
+//
+//		}
 	}
 
 	public static class IndicatorBuilder {
@@ -752,11 +756,11 @@ public final class AgentWeb {
 			return this;
 		}
 
-		public CommonBuilder additionalHttpHeader(String k, String v) {
-			this.mAgentBuilder.addHeader(k, v);
-
-			return this;
-		}
+//		public CommonBuilder additionalHttpHeader(String k, String v) {
+//			this.mAgentBuilder.addHeader(k, v);
+//
+//			return this;
+//		}
 
 		public CommonBuilder setPermissionInterceptor(@Nullable PermissionInterceptor permissionInterceptor) {
 			this.mAgentBuilder.mPermissionInterceptor = permissionInterceptor;

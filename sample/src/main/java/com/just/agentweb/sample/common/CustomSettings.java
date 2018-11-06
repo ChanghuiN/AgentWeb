@@ -5,10 +5,9 @@ import android.os.Build;
 import android.webkit.DownloadListener;
 import android.webkit.WebView;
 
-//import com.just.agentweb.DefaultAgentWebSettings;
-import com.just.agentweb.AgentWeb;
-import com.just.agentweb.DefaultAgentWebSettings;
-import com.just.agentweb.IAgentWebSettings;
+//import com.just.agentweb.client.DefaultAgentWebSettings;
+import com.just.agentweb.client.DefaultAgentWebSettings;
+import com.just.agentweb.client.IAgentWebSettings;
 import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.DefaultDownloadImpl;
 

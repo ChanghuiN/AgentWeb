@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.client;
 
 
 import android.app.Activity;
@@ -26,6 +26,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.just.agentweb.AgentWeb;
+import com.just.agentweb.AgentWebConfig;
+import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.DefaultDownloadImpl;
 import com.just.agentweb.utils.AgentWebUtils;
 import com.just.agentweb.utils.LogUtils;
@@ -55,7 +58,7 @@ public class DefaultAgentWebSettings implements IAgentWebSettings, WebListenerMa
 
 	}
 
-	final void bindAgentWeb(AgentWeb agentWeb) {
+	public final void bindAgentWeb(AgentWeb agentWeb) {
 		this.mAgentWeb = agentWeb;
 //		this.bindAgentWebSupport(agentWeb);
 

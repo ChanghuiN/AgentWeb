@@ -15,10 +15,11 @@ import android.webkit.WebViewClient;
 
 import com.just.agentweb.AgentWeb;
 //import com.just.agentweb.AgentWebSettingsImpl;
+import com.just.agentweb.security.SecurityType;
 import com.just.agentweb.view.AgentWebUIControllerImplBase;
-import com.just.agentweb.DefaultAgentWebSettings;
+import com.just.agentweb.client.DefaultAgentWebSettings;
 import com.just.agentweb.client.DefaultWebClient;
-import com.just.agentweb.IAgentWebSettings;
+import com.just.agentweb.client.IAgentWebSettings;
 import com.just.agentweb.view.IWebLayout;
 //import com.just.agentweb.MiddlewareWebChromeBase;
 //import com.just.agentweb.MiddlewareWebClientBase;
@@ -54,7 +55,7 @@ public abstract class BaseAgentWebFragment extends Fragment {
                 .setWebChromeClient(getWebChromeClient())
                 .interceptUnkownUrl()
                 .setOpenOtherPageWays(DefaultWebClient.OpenOtherPageWays.ASK)
-                .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
+                .setSecurityType(SecurityType.STRICT_CHECK)
                 .setAgentWebUIController(getAgentWebUIController())
                 .setMainFrameErrorView(mErrorLayoutEntity.layoutRes, mErrorLayoutEntity.reloadId)
 //                .useMiddlewareWebChrome(getMiddleWareWebChrome())

@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.just.agentweb.AgentWeb;
-import com.just.agentweb.DefaultAgentWebSettings;
+import com.just.agentweb.client.DefaultAgentWebSettings;
 import com.just.agentweb.client.DefaultWebClient;
 import com.just.agentweb.sample.widget.CoolIndicatorLayout;
+import com.just.agentweb.security.SecurityType;
 
 /**
  * Created by cenxiaozhong on 2017/5/26.
@@ -42,7 +43,7 @@ public class CustomIndicatorFragment extends AgentWebFragment {
 				.setAgentWebWebSettings(DefaultAgentWebSettings.getInstance())
 				.setWebViewClient(mWebViewClient)
 				.setPermissionInterceptor(mPermissionInterceptor)
-				.setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
+				.setSecurityType(SecurityType.STRICT_CHECK)
 				.interceptUnkownUrl()
 				.setOpenOtherPageWays(DefaultWebClient.OpenOtherPageWays.ASK)
 				.createAgentWeb()//
