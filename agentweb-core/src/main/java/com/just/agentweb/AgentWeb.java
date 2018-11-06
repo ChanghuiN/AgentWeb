@@ -32,6 +32,28 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.just.agentweb.chromeclient.DefaultChromeClient;
+import com.just.agentweb.js.JsAccessEntrace;
+import com.just.agentweb.js.JsAccessEntraceImpl;
+import com.just.agentweb.js.JsInterfaceHolder;
+import com.just.agentweb.js.JsInterfaceHolderImpl;
+import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.video.IVideo;
+import com.just.agentweb.video.VideoImpl;
+import com.just.agentweb.view.AbsAgentWebUIController;
+import com.just.agentweb.view.AgentWebUIControllerImplBase;
+import com.just.agentweb.view.BaseIndicatorView;
+import com.just.agentweb.view.DefaultWebCreator;
+import com.just.agentweb.view.DefaultWebLifeCycleImpl;
+import com.just.agentweb.view.IWebLayout;
+import com.just.agentweb.view.IndicatorController;
+import com.just.agentweb.view.IndicatorHandler;
+import com.just.agentweb.view.WebCreator;
+import com.just.agentweb.view.WebLifeCycle;
+import com.just.agentweb.view.WebParentLayout;
+import com.just.agentweb.webviewclient.DefaultWebClient;
+
 import java.lang.ref.WeakReference;
 import java.util.Map;
 
@@ -566,7 +588,7 @@ public final class AgentWeb {
 			if (mTag == AgentWeb.FRAGMENT_TAG && this.mViewGroup == null) {
 				throw new NullPointerException("ViewGroup is null,Please check your parameters .");
 			}
-			return new PreAgentWeb(HookManager.hookAgentWeb(new AgentWeb(this), this));
+			return new PreAgentWeb(new AgentWeb(this));
 		}
 
 		private void addJavaObject(String key, Object o) {

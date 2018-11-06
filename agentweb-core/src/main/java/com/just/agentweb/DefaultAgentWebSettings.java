@@ -26,6 +26,10 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.just.agentweb.download.DefaultDownloadImpl;
+import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.utils.LogUtils;
+
 /**
  * @author cenxiaozhong
  * @update 4.0.0 ,WebDefaultSettingsManager rename to DefaultAgentWebSettings
@@ -165,24 +169,25 @@ public class DefaultAgentWebSettings implements IAgentWebSettings, WebListenerMa
 	@Override
 	public WebListenerManager setDownloader(WebView webView, DownloadListener downloadListener) {
 
-		Class<?> clazz = null;
-		Object mDefaultDownloadImpl$Extra = null;
-		try {
-			clazz = Class.forName("com.just.agentweb.download.DefaultDownloadImpl");
-			mDefaultDownloadImpl$Extra =
-					clazz.getDeclaredMethod("create", Activity.class, WebView.class,
-							Class.forName("com.just.agentweb.download.DownloadListener"),
-							Class.forName("com.just.agentweb.download.DownloadingListener"),
-							PermissionInterceptor.class)
-							.invoke(mDefaultDownloadImpl$Extra, (Activity) webView.getContext()
-									, webView, null, null, mAgentWeb.getPermissionInterceptor());
-
-		} catch (Throwable ignore) {
-			if (LogUtils.isDebug()) {
-				ignore.printStackTrace();
-			}
-		}
-		webView.setDownloadListener(mDefaultDownloadImpl$Extra == null ? downloadListener : (DownloadListener) mDefaultDownloadImpl$Extra);
+//		Class<?> clazz = null;
+//		Object mDefaultDownloadImpl$Extra = null;
+//		try {
+//			clazz = Class.forName("com.just.agentweb.download.DefaultDownloadImpl");
+//			mDefaultDownloadImpl$Extra =
+//					clazz.getDeclaredMethod("create", Activity.class, WebView.class,
+//							Class.forName("com.just.agentweb.download.DownloadListener"),
+//							Class.forName("com.just.agentweb.download.DownloadingListener"),
+//							PermissionInterceptor.class)
+//							.invoke(mDefaultDownloadImpl$Extra, (Activity) webView.getContext()
+//									, webView, null, null, mAgentWeb.getPermissionInterceptor());
+//
+//		} catch (Throwable ignore) {
+//			if (LogUtils.isDebug()) {
+//				ignore.printStackTrace();
+//			}
+//		}
+		webView.setDownloadListener(downloadListener != null ? downloadListener : DefaultDownloadImpl
+				.create((Activity) webView.getContext(), webView, null, null, mAgentWeb.getPermissionInterceptor()));
 		return this;
 	}
 

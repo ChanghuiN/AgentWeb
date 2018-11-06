@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
-import com.just.agentweb.IWebLayout;
+import com.just.agentweb.view.IWebLayout;
 import com.just.agentweb.sample.R;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
 

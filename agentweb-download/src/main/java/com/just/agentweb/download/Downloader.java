@@ -26,8 +26,8 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 
 import com.just.agentweb.AgentWebConfig;
-import com.just.agentweb.AgentWebUtils;
-import com.just.agentweb.LogUtils;
+import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.utils.LogUtils;
 
 import java.io.BufferedInputStream;
 import java.io.File;

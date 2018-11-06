@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.webkit.WebView;
 
-import com.just.agentweb.AgentWebUIControllerImplBase;
+import com.just.agentweb.view.AgentWebUIControllerImplBase;
 
 /**
  * Created by cenxiaozhong on 2017/12/23.

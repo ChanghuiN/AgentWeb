@@ -17,11 +17,11 @@ import android.webkit.WebViewClient;
 
 import com.just.agentweb.AgentWeb;
 //import com.just.agentweb.AgentWebSettingsImpl;
-import com.just.agentweb.AgentWebUIControllerImplBase;
+import com.just.agentweb.view.AgentWebUIControllerImplBase;
 import com.just.agentweb.DefaultAgentWebSettings;
-import com.just.agentweb.DefaultWebClient;
+import com.just.agentweb.webviewclient.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
-import com.just.agentweb.IWebLayout;
+import com.just.agentweb.view.IWebLayout;
 //import com.just.agentweb.MiddlewareWebChromeBase;
 //import com.just.agentweb.MiddlewareWebClientBase;
 import com.just.agentweb.PermissionInterceptor;

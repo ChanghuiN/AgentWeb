@@ -28,8 +28,8 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 
-import com.just.agentweb.AgentWebUtils;
-import com.just.agentweb.LogUtils;
+import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.utils.LogUtils;
 
 import java.io.File;
 import java.lang.reflect.Field;

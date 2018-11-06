@@ -1,7 +1,6 @@
 package com.just.agentweb.sample.fragment;
 
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -36,20 +35,16 @@ import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
 //import com.just.agentweb.AgentWebSettingsImpl;
 import com.just.agentweb.DefaultAgentWebSettings;
-import com.just.agentweb.DefaultWebClient;
+import com.just.agentweb.webviewclient.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
-import com.just.agentweb.LogUtils;
+import com.just.agentweb.utils.LogUtils;
 //import com.just.agentweb.MiddlewareWebChromeBase;
 //import com.just.agentweb.MiddlewareWebClientBase;
 import com.just.agentweb.PermissionInterceptor;
-import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.AgentWebDownloader;
-import com.just.agentweb.download.DefaultDownloadImpl;
 import com.just.agentweb.download.DownloadListenerAdapter;
 import com.just.agentweb.download.DownloadingService;
 import com.just.agentweb.sample.R;
-import com.just.agentweb.sample.client.MiddlewareChromeClient;
-import com.just.agentweb.sample.client.MiddlewareWebViewClient;
 import com.just.agentweb.sample.common.FragmentKeyDown;
 import com.just.agentweb.sample.common.UIController;
 

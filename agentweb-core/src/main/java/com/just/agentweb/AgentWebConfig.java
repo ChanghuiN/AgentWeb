@@ -26,9 +26,12 @@ import android.webkit.CookieSyncManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
+import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.utils.LogUtils;
+
 import java.io.File;
 
-import static com.just.agentweb.AgentWebUtils.getAgentWebFilePath;
+import static com.just.agentweb.utils.AgentWebUtils.getAgentWebFilePath;
 /**
  * @since 1.0.0
  * @author cenxiaozhong
@@ -36,12 +39,12 @@ import static com.just.agentweb.AgentWebUtils.getAgentWebFilePath;
 public class AgentWebConfig {
 
 
-	static final String FILE_CACHE_PATH = "agentweb-cache";
+	public static final String FILE_CACHE_PATH = "agentweb-cache";
 	static final String AGENTWEB_CACHE_PATCH = File.separator + "agentweb-cache";
 	/**
 	 * 缓存路径
 	 */
-	static String AGENTWEB_FILE_PATH;
+	public static String AGENTWEB_FILE_PATH;
 	/**
 	 * DEBUG 模式 ， 如果需要查看日志请设置为 true
 	 */
@@ -49,7 +52,7 @@ public class AgentWebConfig {
 	/**
 	 * 当前操作系统是否低于 KITKAT
 	 */
-	static final boolean IS_KITKAT_OR_BELOW_KITKAT = Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT;
+	public static final boolean IS_KITKAT_OR_BELOW_KITKAT = Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT;
 	/**
 	 * 默认 WebView  类型 。
 	 */
@@ -62,7 +65,7 @@ public class AgentWebConfig {
 	 * 自定义 WebView
 	 */
 	public static final int WEBVIEW_CUSTOM_TYPE = 3;
-	static int WEBVIEW_TYPE = WEBVIEW_DEFAULT_TYPE;
+	public static int WEBVIEW_TYPE = WEBVIEW_DEFAULT_TYPE;
 	private static volatile boolean IS_INITIALIZED = false;
 	private static final String TAG = AgentWebConfig.class.getSimpleName();
 	/**

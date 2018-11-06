@@ -21,6 +21,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.webkit.JavascriptInterface;
 
+import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.utils.LogUtils;
+
 import java.lang.ref.WeakReference;
 
 /**
