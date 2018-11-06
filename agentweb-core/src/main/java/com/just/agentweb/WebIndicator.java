@@ -33,6 +33,8 @@ import android.view.animation.LinearInterpolator;
 /**
  * @author cenxiaozhong
  * @since 1.0.0
+ *
+ * 进度条
  */
 public class WebIndicator extends BaseIndicatorView implements BaseIndicatorSpec {
 

@@ -40,9 +40,11 @@ public class WebViewClientDelegate extends WebViewClient {
     private WebViewClient mDelegate;
     private static final String TAG = WebViewClientDelegate.class.getSimpleName();
 
-    WebViewClientDelegate(WebViewClient client) {
+    protected WebViewClientDelegate(WebViewClient client) {
         this.mDelegate = client;
     }
+
+    protected WebViewClientDelegate() { }
 
     protected WebViewClient getDelegate() {
         return mDelegate;

@@ -46,7 +46,9 @@ public class WebChromeClientDelegate extends WebChromeClient {
         return mDelegate;
     }
 
-    public WebChromeClientDelegate(WebChromeClient webChromeClient) {
+    protected WebChromeClientDelegate() { }
+
+    protected WebChromeClientDelegate(WebChromeClient webChromeClient) {
         this.mDelegate = webChromeClient;
     }
 

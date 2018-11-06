@@ -39,8 +39,8 @@ import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.LogUtils;
-import com.just.agentweb.MiddlewareWebChromeBase;
-import com.just.agentweb.MiddlewareWebClientBase;
+//import com.just.agentweb.MiddlewareWebChromeBase;
+//import com.just.agentweb.MiddlewareWebClientBase;
 import com.just.agentweb.PermissionInterceptor;
 import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.AgentWebDownloader;
@@ -75,8 +75,8 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 	 */
 	private Gson mGson = new Gson();
 	public static final String TAG = AgentWebFragment.class.getSimpleName();
-	private MiddlewareWebClientBase mMiddleWareWebClient;
-	private MiddlewareWebChromeBase mMiddleWareWebChrome;
+//	private MiddlewareWebClientBase mMiddleWareWebClient;
+//	private MiddlewareWebChromeBase mMiddleWareWebChrome;
 	private DownloadingService mDownloadingService;
 	private AgentWebDownloader.ExtraService mExtraService;
 
@@ -113,8 +113,8 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 				.setSecurityType(AgentWeb.SecurityType.STRICT_CHECK) //严格模式 Android 4.2.2 以下会放弃注入对象 ，使用AgentWebView没影响。
 				.setAgentWebUIController(new UIController(getActivity())) //自定义UI  AgentWeb3.0.0 加入。
 				.setMainFrameErrorView(R.layout.agentweb_error_page, -1) //参数1是错误显示的布局，参数2点击刷新控件ID -1表示点击整个布局都刷新， AgentWeb 3.0.0 加入。
-				.useMiddlewareWebChrome(getMiddlewareWebChrome()) //设置WebChromeClient中间件，支持多个WebChromeClient，AgentWeb 3.0.0 加入。
-				.useMiddlewareWebClient(getMiddlewareWebClient()) //设置WebViewClient中间件，支持多个WebViewClient， AgentWeb 3.0.0 加入。
+//				.useMiddlewareWebChrome(getMiddlewareWebChrome()) //设置WebChromeClient中间件，支持多个WebChromeClient，AgentWeb 3.0.0 加入。
+//				.useMiddlewareWebClient(getMiddlewareWebClient()) //设置WebViewClient中间件，支持多个WebViewClient， AgentWeb 3.0.0 加入。
 //                .setDownloadListener(mDownloadListener) 4.0.0 删除该API//下载回调
 //                .openParallelDownload()// 4.0.0删除该API 打开并行下载 , 默认串行下载。 请通过AgentWebDownloader#Extra实现并行下载
 //                .setNotifyIcon(R.drawable.ic_file_download_black_24dp) 4.0.0删除该api //下载通知图标。4.0.0后的版本请通过AgentWebDownloader#Extra修改icon
@@ -584,46 +584,46 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 		super.onDestroyView();
 	}
 
-	/**
-	 * MiddlewareWebClientBase 是 AgentWeb 3.0.0 提供一个强大的功能，
-	 * 如果用户需要使用 AgentWeb 提供的功能， 不想重写 WebClientView方
-	 * 法覆盖AgentWeb提供的功能，那么 MiddlewareWebClientBase 是一个
-	 * 不错的选择 。
-	 *
-	 * @return
-	 */
-	protected MiddlewareWebClientBase getMiddlewareWebClient() {
-		return this.mMiddleWareWebClient = new MiddlewareWebViewClient() {
-			/**
-			 *
-			 * @param view
-			 * @param url
-			 * @return
-			 */
-			@Override
-			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//	/**
+//	 * MiddlewareWebClientBase 是 AgentWeb 3.0.0 提供一个强大的功能，
+//	 * 如果用户需要使用 AgentWeb 提供的功能， 不想重写 WebClientView方
+//	 * 法覆盖AgentWeb提供的功能，那么 MiddlewareWebClientBase 是一个
+//	 * 不错的选择 。
+//	 *
+//	 * @return
+//	 */
+//	protected MiddlewareWebClientBase getMiddlewareWebClient() {
+//		return this.mMiddleWareWebClient = new MiddlewareWebClientBase() {
+//			/**
+//			 *
+//			 * @param view
+//			 * @param url
+//			 * @return
+//			 */
+//			@Override
+//			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//
+//				if (url.startsWith("agentweb")) { // 拦截 url，不执行 DefaultWebClient#shouldOverrideUrlLoading
+//					Log.i(TAG, "agentweb scheme ~");
+//					return true;
+//				}
+//
+//				if (super.shouldOverrideUrlLoading(view, url)) { // 执行 DefaultWebClient#shouldOverrideUrlLoading
+//					return true;
+//				}
+//				// do you work
+//				return false;
+//			}
+//
+//			@Override
+//			public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+//				return super.shouldOverrideUrlLoading(view, request);
+//			}
+//		};
+//	}
 
-				if (url.startsWith("agentweb")) { // 拦截 url，不执行 DefaultWebClient#shouldOverrideUrlLoading
-					Log.i(TAG, "agentweb scheme ~");
-					return true;
-				}
-
-				if (super.shouldOverrideUrlLoading(view, url)) { // 执行 DefaultWebClient#shouldOverrideUrlLoading
-					return true;
-				}
-				// do you work
-				return false;
-			}
-
-			@Override
-			public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-				return super.shouldOverrideUrlLoading(view, request);
-			}
-		};
-	}
-
-	protected MiddlewareWebChromeBase getMiddlewareWebChrome() {
-		return this.mMiddleWareWebChrome = new MiddlewareChromeClient() {
-		};
-	}
+//	protected MiddlewareWebChromeBase getMiddlewareWebChrome() {
+//		return this.mMiddleWareWebChrome = new MiddlewareChromeClient() {
+//		};
+//	}
 }

@@ -22,8 +22,8 @@ import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.IWebLayout;
-import com.just.agentweb.MiddlewareWebChromeBase;
-import com.just.agentweb.MiddlewareWebClientBase;
+//import com.just.agentweb.MiddlewareWebChromeBase;
+//import com.just.agentweb.MiddlewareWebClientBase;
 import com.just.agentweb.PermissionInterceptor;
 
 /**
@@ -37,8 +37,8 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
     protected AgentWeb mAgentWeb;
     private AgentWebUIControllerImplBase mAgentWebUIController;
     private ErrorLayoutEntity mErrorLayoutEntity;
-    private MiddlewareWebChromeBase mMiddleWareWebChrome;
-    private MiddlewareWebClientBase mMiddleWareWebClient;
+//    private MiddlewareWebChromeBase mMiddleWareWebChrome;
+//    private MiddlewareWebClientBase mMiddleWareWebClient;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,8 +72,8 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
                 .setAgentWebUIController(getAgentWebUIController())
                 .interceptUnkownUrl()
                 .setOpenOtherPageWays(getOpenOtherAppWay())
-                .useMiddlewareWebChrome(getMiddleWareWebChrome())
-                .useMiddlewareWebClient(getMiddleWareWebClient())
+//                .useMiddlewareWebChrome(getMiddleWareWebChrome())
+//                .useMiddlewareWebClient(getMiddleWareWebClient())
                 .setAgentWebWebSettings(getAgentWebSettings())
                 .setMainFrameErrorView(mErrorLayoutEntity.layoutRes, mErrorLayoutEntity.reloadId)
                 .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
@@ -227,15 +227,15 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
         return null;
     }
 
-    protected @NonNull
-    MiddlewareWebChromeBase getMiddleWareWebChrome() {
-        return this.mMiddleWareWebChrome = new MiddlewareWebChromeBase() {
-        };
-    }
-
-    protected @NonNull
-    MiddlewareWebClientBase getMiddleWareWebClient() {
-        return this.mMiddleWareWebClient = new MiddlewareWebClientBase() {
-        };
-    }
+//    protected @NonNull
+//    MiddlewareWebChromeBase getMiddleWareWebChrome() {
+//        return this.mMiddleWareWebChrome = new MiddlewareWebChromeBase() {
+//        };
+//    }
+//
+//    protected @NonNull
+//    MiddlewareWebClientBase getMiddleWareWebClient() {
+//        return this.mMiddleWareWebClient = new MiddlewareWebClientBase() {
+//        };
+//    }
 }

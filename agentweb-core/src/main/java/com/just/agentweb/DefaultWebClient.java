@@ -53,7 +53,7 @@ import java.util.Set;
  * @author cenxiaozhong
  * @since 3.0.0
  */
-public class DefaultWebClient extends MiddlewareWebClientBase {
+public class DefaultWebClient extends WebViewClientDelegate {
 
 	/**
 	 * Activity's WeakReference
@@ -281,6 +281,7 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
 	@Override
 	public boolean shouldOverrideUrlLoading(WebView view, String url) {
 
+		LogUtils.i(TAG, "shouldOverrideUrlLoading url " + url);
 
 		int tag = -1;
 

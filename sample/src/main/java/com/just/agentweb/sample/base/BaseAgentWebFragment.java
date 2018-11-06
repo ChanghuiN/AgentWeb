@@ -20,8 +20,8 @@ import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.IWebLayout;
-import com.just.agentweb.MiddlewareWebChromeBase;
-import com.just.agentweb.MiddlewareWebClientBase;
+//import com.just.agentweb.MiddlewareWebChromeBase;
+//import com.just.agentweb.MiddlewareWebClientBase;
 import com.just.agentweb.PermissionInterceptor;
 
 /**
@@ -32,8 +32,8 @@ import com.just.agentweb.PermissionInterceptor;
 public abstract class BaseAgentWebFragment extends Fragment {
 
     protected AgentWeb mAgentWeb;
-    private MiddlewareWebChromeBase mMiddleWareWebChrome;
-    private MiddlewareWebClientBase mMiddleWareWebClient;
+//    private MiddlewareWebChromeBase mMiddleWareWebChrome;
+//    private MiddlewareWebClientBase mMiddleWareWebClient;
     private ErrorLayoutEntity mErrorLayoutEntity;
     private AgentWebUIControllerImplBase mAgentWebUIController;
 
@@ -57,8 +57,8 @@ public abstract class BaseAgentWebFragment extends Fragment {
                 .setSecurityType(AgentWeb.SecurityType.STRICT_CHECK)
                 .setAgentWebUIController(getAgentWebUIController())
                 .setMainFrameErrorView(mErrorLayoutEntity.layoutRes, mErrorLayoutEntity.reloadId)
-                .useMiddlewareWebChrome(getMiddleWareWebChrome())
-                .useMiddlewareWebClient(getMiddleWareWebClient())
+//                .useMiddlewareWebChrome(getMiddleWareWebChrome())
+//                .useMiddlewareWebClient(getMiddleWareWebClient())
                 .createAgentWeb()//
                 .ready()//
                 .go(getUrl());
@@ -187,15 +187,15 @@ public abstract class BaseAgentWebFragment extends Fragment {
         return null;
     }
 
-    protected @NonNull
-    MiddlewareWebChromeBase getMiddleWareWebChrome() {
-        return this.mMiddleWareWebChrome = new MiddlewareWebChromeBase() {
-        };
-    }
-
-    protected @NonNull
-    MiddlewareWebClientBase getMiddleWareWebClient() {
-        return this.mMiddleWareWebClient = new MiddlewareWebClientBase() {
-        };
-    }
+//    protected @NonNull
+//    MiddlewareWebChromeBase getMiddleWareWebChrome() {
+//        return this.mMiddleWareWebChrome = new MiddlewareWebChromeBase() {
+//        };
+//    }
+//
+//    protected @NonNull
+//    MiddlewareWebClientBase getMiddleWareWebClient() {
+//        return this.mMiddleWareWebClient = new MiddlewareWebClientBase() {
+//        };
+//    }
 }

@@ -160,11 +160,11 @@ public final class AgentWeb {
 	/**
 	 * MiddlewareWebClientBase WebViewClient 中间件
 	 */
-	private MiddlewareWebClientBase mMiddleWrareWebClientBaseHeader;
+//	private MiddlewareWebClientBase mMiddleWrareWebClientBaseHeader;
 	/**
 	 * MiddlewareWebChromeBase WebChromeClient 中间件
 	 */
-	private MiddlewareWebChromeBase mMiddlewareWebChromeBaseHeader;
+//	private MiddlewareWebChromeBase mMiddlewareWebChromeBaseHeader;
 	/**
 	 * 事件拦截
 	 */
@@ -210,8 +210,8 @@ public final class AgentWeb {
 		if (agentBuilder.mOpenOtherPage != null) {
 			this.mUrlHandleWays = agentBuilder.mOpenOtherPage.code;
 		}
-		this.mMiddleWrareWebClientBaseHeader = agentBuilder.mMiddlewareWebClientBaseHeader;
-		this.mMiddlewareWebChromeBaseHeader = agentBuilder.mChromeMiddleWareHeader;
+//		this.mMiddleWrareWebClientBaseHeader = agentBuilder.mMiddlewareWebClientBaseHeader;
+//		this.mMiddlewareWebChromeBaseHeader = agentBuilder.mChromeMiddleWareHeader;
 		init();
 	}
 
@@ -400,7 +400,7 @@ public final class AgentWeb {
 
 	private WebViewClient getWebViewClient() {
 
-		LogUtils.i(TAG, "getDelegate:" + this.mMiddleWrareWebClientBaseHeader);
+//		LogUtils.i(TAG, "getDelegate:" + this.mMiddleWrareWebClientBaseHeader);
 		DefaultWebClient mDefaultWebClient = DefaultWebClient
 				.createBuilder()
 				.setActivity(this.mActivity)
@@ -411,21 +411,21 @@ public final class AgentWeb {
 				.setInterceptUnkownUrl(this.mIsInterceptUnkownUrl)
 				.setUrlHandleWays(this.mUrlHandleWays)
 				.build();
-		MiddlewareWebClientBase header = this.mMiddleWrareWebClientBaseHeader;
-		if (header != null) {
-			MiddlewareWebClientBase tail = header;
-			int count = 1;
-			MiddlewareWebClientBase tmp = header;
-			while (tmp.next() != null) {
-				tail = tmp = tmp.next();
-				count++;
-			}
-			LogUtils.i(TAG, "MiddlewareWebClientBase middleware count:" + count);
-			tail.setDelegate(mDefaultWebClient);
-			return header;
-		} else {
+//		MiddlewareWebClientBase header = this.mMiddleWrareWebClientBaseHeader;
+//		if (header != null) {
+//			MiddlewareWebClientBase tail = header;
+//			int count = 1;
+//			MiddlewareWebClientBase tmp = header;
+//			while (tmp.next() != null) {
+//				tail = tmp = tmp.next();
+//				count++;
+//			}
+//			LogUtils.i(TAG, "MiddlewareWebClientBase middleware count:" + count);
+//			tail.setDelegate(mDefaultWebClient);
+//			return header;
+//		} else {
 			return mDefaultWebClient;
-		}
+//		}
 
 	}
 
@@ -475,21 +475,21 @@ public final class AgentWeb {
 						this.mPermissionInterceptor, mWebCreator.getWebView());
 
 		LogUtils.i(TAG, "WebChromeClient:" + this.mWebChromeClient);
-		MiddlewareWebChromeBase header = this.mMiddlewareWebChromeBaseHeader;
-		if (header != null) {
-			MiddlewareWebChromeBase tail = header;
-			int count = 1;
-			MiddlewareWebChromeBase tmp = header;
-			for (; tmp.next() != null; ) {
-				tail = tmp = tmp.next();
-				count++;
-			}
-			LogUtils.i(TAG, "MiddlewareWebClientBase middleware count:" + count);
-			tail.setDelegate(mDefaultChromeClient);
-			return this.mTargetChromeClient = header;
-		} else {
+//		MiddlewareWebChromeBase header = this.mMiddlewareWebChromeBaseHeader;
+//		if (header != null) {
+//			MiddlewareWebChromeBase tail = header;
+//			int count = 1;
+//			MiddlewareWebChromeBase tmp = header;
+//			for (; tmp.next() != null; ) {
+//				tail = tmp = tmp.next();
+//				count++;
+//			}
+//			LogUtils.i(TAG, "MiddlewareWebClientBase middleware count:" + count);
+//			tail.setDelegate(mDefaultChromeClient);
+//			return this.mTargetChromeClient = header;
+//		} else {
 			return this.mTargetChromeClient = mDefaultChromeClient;
-		}
+//		}
 	}
 
 
@@ -526,10 +526,10 @@ public final class AgentWeb {
 		private AbsAgentWebUIController mAgentWebUIController;
 		private DefaultWebClient.OpenOtherPageWays mOpenOtherPage = null;
 		private boolean mIsInterceptUnkownUrl = false;
-		private MiddlewareWebClientBase mMiddlewareWebClientBaseHeader;
-		private MiddlewareWebClientBase mMiddlewareWebClientBaseTail;
-		private MiddlewareWebChromeBase mChromeMiddleWareHeader = null;
-		private MiddlewareWebChromeBase mChromeMiddleWareTail = null;
+//		private MiddlewareWebClientBase mMiddlewareWebClientBaseHeader;
+//		private MiddlewareWebClientBase mMiddlewareWebClientBaseTail;
+//		private MiddlewareWebChromeBase mChromeMiddleWareHeader = null;
+//		private MiddlewareWebChromeBase mChromeMiddleWareTail = null;
 		private View mErrorView;
 		private int mErrorLayout;
 		private int mReloadId;
@@ -662,31 +662,31 @@ public final class AgentWeb {
 			return this;
 		}
 
-		public CommonBuilder useMiddlewareWebClient(@NonNull MiddlewareWebClientBase middleWrareWebClientBase) {
-			if (middleWrareWebClientBase == null) {
-				return this;
-			}
-			if (this.mAgentBuilder.mMiddlewareWebClientBaseHeader == null) {
-				this.mAgentBuilder.mMiddlewareWebClientBaseHeader = this.mAgentBuilder.mMiddlewareWebClientBaseTail = middleWrareWebClientBase;
-			} else {
-				this.mAgentBuilder.mMiddlewareWebClientBaseTail.enq(middleWrareWebClientBase);
-				this.mAgentBuilder.mMiddlewareWebClientBaseTail = middleWrareWebClientBase;
-			}
-			return this;
-		}
-
-		public CommonBuilder useMiddlewareWebChrome(@NonNull MiddlewareWebChromeBase middlewareWebChromeBase) {
-			if (middlewareWebChromeBase == null) {
-				return this;
-			}
-			if (this.mAgentBuilder.mChromeMiddleWareHeader == null) {
-				this.mAgentBuilder.mChromeMiddleWareHeader = this.mAgentBuilder.mChromeMiddleWareTail = middlewareWebChromeBase;
-			} else {
-				this.mAgentBuilder.mChromeMiddleWareTail.enq(middlewareWebChromeBase);
-				this.mAgentBuilder.mChromeMiddleWareTail = middlewareWebChromeBase;
-			}
-			return this;
-		}
+//		public CommonBuilder useMiddlewareWebClient(@NonNull MiddlewareWebClientBase middleWrareWebClientBase) {
+//			if (middleWrareWebClientBase == null) {
+//				return this;
+//			}
+//			if (this.mAgentBuilder.mMiddlewareWebClientBaseHeader == null) {
+//				this.mAgentBuilder.mMiddlewareWebClientBaseHeader = this.mAgentBuilder.mMiddlewareWebClientBaseTail = middleWrareWebClientBase;
+//			} else {
+//				this.mAgentBuilder.mMiddlewareWebClientBaseTail.enq(middleWrareWebClientBase);
+//				this.mAgentBuilder.mMiddlewareWebClientBaseTail = middleWrareWebClientBase;
+//			}
+//			return this;
+//		}
+//
+//		public CommonBuilder useMiddlewareWebChrome(@NonNull MiddlewareWebChromeBase middlewareWebChromeBase) {
+//			if (middlewareWebChromeBase == null) {
+//				return this;
+//			}
+//			if (this.mAgentBuilder.mChromeMiddleWareHeader == null) {
+//				this.mAgentBuilder.mChromeMiddleWareHeader = this.mAgentBuilder.mChromeMiddleWareTail = middlewareWebChromeBase;
+//			} else {
+//				this.mAgentBuilder.mChromeMiddleWareTail.enq(middlewareWebChromeBase);
+//				this.mAgentBuilder.mChromeMiddleWareTail = middlewareWebChromeBase;
+//			}
+//			return this;
+//		}
 
 		public CommonBuilder setMainFrameErrorView(@NonNull View view) {
 			this.mAgentBuilder.mErrorView = view;

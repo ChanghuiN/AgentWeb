@@ -257,14 +257,13 @@ public class AgentWebView extends WebView {
     }
 
 
-    public static class AgentWebClient extends MiddlewareWebClientBase {
+    public static class AgentWebClient extends WebViewClientDelegate {
 
         private AgentWebView mAgentWebView;
 
         private AgentWebClient(AgentWebView agentWebView) {
             this.mAgentWebView = agentWebView;
         }
-
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -294,7 +293,7 @@ public class AgentWebView extends WebView {
 
     }
 
-    public static class AgentWebChrome extends MiddlewareWebChromeBase {
+    public static class AgentWebChrome extends WebChromeClientDelegate {
 
         private AgentWebView mAgentWebView;
 

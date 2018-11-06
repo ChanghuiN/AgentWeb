@@ -46,7 +46,7 @@ import static com.just.agentweb.ActionActivity.KEY_FROM_INTENTION;
  * @author cenxiaozhong
  * @since 1.0.0
  */
-public class DefaultChromeClient extends MiddlewareWebChromeBase {
+public class DefaultChromeClient extends WebChromeClientDelegate {
 
 	/**
 	 * Activity 的虚引用

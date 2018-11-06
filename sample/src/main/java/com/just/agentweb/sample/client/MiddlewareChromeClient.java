@@ -4,13 +4,14 @@ import android.util.Log;
 import android.webkit.JsResult;
 import android.webkit.WebView;
 
-import com.just.agentweb.MiddlewareWebChromeBase;
+//import com.just.agentweb.MiddlewareWebChromeBase;
+import com.just.agentweb.WebChromeClientDelegate;
 
 /**
  * Created by cenxiaozhong on 2017/12/16.
  * After agentweb 3.0.0  ， allow dev to custom self WebChromeClient's MiddleWare  .
  */
-public class MiddlewareChromeClient extends MiddlewareWebChromeBase {
+public class MiddlewareChromeClient extends WebChromeClientDelegate {
     public MiddlewareChromeClient() {
     }
     @Override

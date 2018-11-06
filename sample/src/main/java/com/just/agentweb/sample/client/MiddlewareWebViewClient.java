@@ -4,7 +4,9 @@ import android.util.Log;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 
-import com.just.agentweb.MiddlewareWebClientBase;
+import com.just.agentweb.WebViewClientDelegate;
+
+//import com.just.agentweb.MiddlewareWebClientBase;
 
 /**
  * Created by cenxiaozhong on 2017/12/16.
@@ -31,7 +33,7 @@ import com.just.agentweb.MiddlewareWebClientBase;
  *
  */
 
-public class MiddlewareWebViewClient extends MiddlewareWebClientBase {
+public class MiddlewareWebViewClient extends WebViewClientDelegate {
 
     public MiddlewareWebViewClient() {
     }
