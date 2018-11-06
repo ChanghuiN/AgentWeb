@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.webviewclient;
+package com.just.agentweb.client;
 
 import android.graphics.Bitmap;
 import android.net.http.SslError;

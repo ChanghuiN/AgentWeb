@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.chromeclient;
+package com.just.agentweb.js;
 
 import android.os.Build;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
-import com.just.agentweb.js.JsAccessEntrace;
 import com.just.agentweb.utils.AgentWebUtils;
 
 /**
@@ -30,10 +29,11 @@ import com.just.agentweb.utils.AgentWebUtils;
  */
 public abstract class BaseJsAccessEntrace implements JsAccessEntrace {
 
-    private WebView mWebView;
-    public static final String TAG=BaseJsAccessEntrace.class.getSimpleName();
-    public BaseJsAccessEntrace(WebView webView){
-        this.mWebView=webView;
+    protected WebView mWebView;
+    public static final String TAG = BaseJsAccessEntrace.class.getSimpleName();
+
+    public BaseJsAccessEntrace(WebView webView) {
+        this.mWebView = webView;
     }
 
     @Override
@@ -46,9 +46,10 @@ public abstract class BaseJsAccessEntrace implements JsAccessEntrace {
         }
 
     }
+
     @Override
     public void callJs(String js) {
-        this.callJs(js,  null);
+        this.callJs(js, null);
     }
 
 
@@ -57,12 +58,13 @@ public abstract class BaseJsAccessEntrace implements JsAccessEntrace {
         mWebView.loadUrl(js);
 
     }
-    private void evaluateJs(String js, final ValueCallback<String>callback){
+
+    private void evaluateJs(String js, final ValueCallback<String> callback) {
 
         mWebView.evaluateJavascript(js, new ValueCallback<String>() {
             @Override
             public void onReceiveValue(String value) {
-                if (callback != null){
+                if (callback != null) {
                     callback.onReceiveValue(value);
                 }
             }
@@ -73,33 +75,33 @@ public abstract class BaseJsAccessEntrace implements JsAccessEntrace {
     @Override
     public void quickCallJs(String method, ValueCallback<String> callback, String... params) {
 
-        StringBuilder sb=new StringBuilder();
-        sb.append("javascript:"+method);
-        if(params==null||params.length==0){
+        StringBuilder sb = new StringBuilder();
+        sb.append("javascript:" + method);
+        if (params == null || params.length == 0) {
             sb.append("()");
-        }else{
+        } else {
             sb.append("(").append(concat(params)).append(")");
         }
 
 
-        callJs(sb.toString(),callback);
+        callJs(sb.toString(), callback);
 
     }
 
-    private String concat(String...params){
+    private String concat(String... params) {
 
-        StringBuilder mStringBuilder=new StringBuilder();
+        StringBuilder mStringBuilder = new StringBuilder();
 
-        for(int i=0;i<params.length;i++){
-            String param=params[i];
-            if(!AgentWebUtils.isJson(param)){
+        for (int i = 0; i < params.length; i++) {
+            String param = params[i];
+            if (!AgentWebUtils.isJson(param)) {
 
                 mStringBuilder.append("\"").append(param).append("\"");
-            }else{
+            } else {
                 mStringBuilder.append(param);
             }
 
-            if(i!=params.length-1){
+            if (i != params.length - 1) {
                 mStringBuilder.append(" , ");
             }
 
@@ -111,11 +113,11 @@ public abstract class BaseJsAccessEntrace implements JsAccessEntrace {
     @Override
     public void quickCallJs(String method, String... params) {
 
-        this.quickCallJs(method,null,params);
+        this.quickCallJs(method, null, params);
     }
 
     @Override
     public void quickCallJs(String method) {
-        this.quickCallJs(method,(String[])null);
+        this.quickCallJs(method, (String[]) null);
     }
 }

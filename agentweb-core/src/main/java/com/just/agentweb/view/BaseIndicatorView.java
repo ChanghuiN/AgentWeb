@@ -21,9 +21,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.just.agentweb.LayoutParamsOffer;
-import com.just.agentweb.view.BaseIndicatorSpec;
-
 
 /**
  * @author cenxiaozhong

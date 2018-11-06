@@ -4,7 +4,7 @@
 
     <application>
         <provider
-            android:name="com.just.agentweb.AgentWebFileProvider"
+            android:name="com.just.agentweb.filechooser.AgentWebFileProvider"
             android:authorities="${applicationId}.AgentWebFileProvider"
             android:exported="false"
             android:grantUriPermissions="true">

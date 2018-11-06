@@ -16,6 +16,8 @@
 
 package com.just.agentweb.js;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.webkit.ValueCallback;
 
 /**
@@ -23,8 +25,14 @@ import android.webkit.ValueCallback;
  * @date 2017/5/14
  * @since 1.0.0
  */
-public interface JsAccessEntrace extends QuickCallJs {
+public interface JsAccessEntrace {
 
+    @RequiresApi(Build.VERSION_CODES.KITKAT)
+    void quickCallJs(String method, ValueCallback<String> callback, String... params);
+
+    void quickCallJs(String method, String... params);
+
+    void quickCallJs(String method);
 
     void callJs(String js, ValueCallback<String> callback);
 

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.filechooser;
+
+import android.support.v4.content.FileProvider;
 
 /**
+ * @since 2.0.0
  * @author cenxiaozhong
- * @date 2017/6/3
- * @since 1.0.0
  */
-public interface EventInterceptor {
-    boolean event();
+public class AgentWebFileProvider extends FileProvider {
 }

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
-
-import android.support.v4.content.FileProvider;
+package com.just.agentweb.security;
 
 /**
- * @since 2.0.0
  * @author cenxiaozhong
  */
-public class AgentWebFileProvider extends FileProvider {
+public interface WebSecurityController {
+
+    void check();
+
 }

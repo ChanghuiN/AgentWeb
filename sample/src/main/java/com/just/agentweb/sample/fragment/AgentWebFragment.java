@@ -35,7 +35,7 @@ import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
 //import com.just.agentweb.AgentWebSettingsImpl;
 import com.just.agentweb.DefaultAgentWebSettings;
-import com.just.agentweb.webviewclient.DefaultWebClient;
+import com.just.agentweb.client.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.utils.LogUtils;
 //import com.just.agentweb.MiddlewareWebChromeBase;

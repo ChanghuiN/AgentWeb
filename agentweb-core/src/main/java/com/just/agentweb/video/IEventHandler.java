@@ -14,25 +14,18 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.js;
+package com.just.agentweb.video;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.webkit.ValueCallback;
-
+import android.view.KeyEvent;
 
 /**
  * @author cenxiaozhong
- * @date 2017/5/29
  * @since 1.0.0
  */
-public interface QuickCallJs {
-    @RequiresApi(Build.VERSION_CODES.KITKAT)
-    void quickCallJs(String method, ValueCallback<String> callback, String... params);
+public interface IEventHandler {
 
-    void quickCallJs(String method, String... params);
-
-    void quickCallJs(String method);
+    boolean onKeyDown(int keyCode, KeyEvent event);
 
 
+    boolean back();
 }

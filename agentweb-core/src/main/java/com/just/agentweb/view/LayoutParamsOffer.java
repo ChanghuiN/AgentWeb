@@ -14,19 +14,17 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.view;
 
-import android.support.v4.util.ArrayMap;
-import android.webkit.WebView;
-
+import android.widget.FrameLayout;
 
 /**
  * @author cenxiaozhong
+ * @date 2017/5/12
+ * @since 1.0.0
  */
-public interface WebSecurityCheckLogic {
+public interface LayoutParamsOffer<T extends FrameLayout.LayoutParams> {
 
-    void dealHoneyComb(WebView view);
-
-    void dealJsInterface(ArrayMap<String, Object> objects,AgentWeb.SecurityType securityType);
+    T offerLayoutParams();
 
 }

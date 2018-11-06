@@ -21,8 +21,6 @@ import android.os.Looper;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
-import com.just.agentweb.chromeclient.BaseJsAccessEntrace;
-
 
 /**
  * @author cenxiaozhong
@@ -31,7 +29,7 @@ import com.just.agentweb.chromeclient.BaseJsAccessEntrace;
  */
 public class JsAccessEntraceImpl extends BaseJsAccessEntrace {
 
-    private WebView mWebView;
+//    private WebView mWebView;
     private Handler mHandler = new Handler(Looper.getMainLooper());
 
 
@@ -41,9 +39,7 @@ public class JsAccessEntraceImpl extends BaseJsAccessEntrace {
 
     private JsAccessEntraceImpl(WebView webView) {
         super(webView);
-        this.mWebView = webView;
     }
-
 
 
     private void safeCallJs(final String s, final ValueCallback valueCallback) {
@@ -62,7 +58,7 @@ public class JsAccessEntraceImpl extends BaseJsAccessEntrace {
             return;
         }
 
-        super.callJs(params,callback);
+        super.callJs(params, callback);
 
     }
 

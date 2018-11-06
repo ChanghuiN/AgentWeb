@@ -5,7 +5,7 @@ import android.webkit.JsResult;
 import android.webkit.WebView;
 
 //import com.just.agentweb.MiddlewareWebChromeBase;
-import com.just.agentweb.chromeclient.WebChromeClientDelegate;
+import com.just.agentweb.client.WebChromeClientDelegate;
 
 /**
  * Created by cenxiaozhong on 2017/12/16.

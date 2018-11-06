@@ -36,8 +36,8 @@ import android.widget.Toast;
 
 import com.just.agentweb.js.JsCallJava;
 import com.just.agentweb.utils.LogUtils;
-import com.just.agentweb.chromeclient.WebChromeClientDelegate;
-import com.just.agentweb.webviewclient.WebViewClientDelegate;
+import com.just.agentweb.client.WebChromeClientDelegate;
+import com.just.agentweb.client.WebViewClientDelegate;
 
 import org.json.JSONObject;
 

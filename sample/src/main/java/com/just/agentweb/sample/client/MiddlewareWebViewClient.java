@@ -4,7 +4,7 @@ import android.util.Log;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 
-import com.just.agentweb.webviewclient.WebViewClientDelegate;
+import com.just.agentweb.client.WebViewClientDelegate;
 
 //import com.just.agentweb.MiddlewareWebClientBase;
 

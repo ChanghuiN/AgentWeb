@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.filechooser;
 
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
 import android.webkit.JavascriptInterface;
 
+import com.just.agentweb.AgentWeb;
 import com.just.agentweb.utils.AgentWebUtils;
 import com.just.agentweb.utils.LogUtils;
 
@@ -36,7 +37,7 @@ public class AgentWebJsInterfaceCompat {
 	private WeakReference<Activity> mActivityWeakReference = null;
 	private String TAG = this.getClass().getSimpleName();
 
-	AgentWebJsInterfaceCompat(AgentWeb agentWeb, Activity activity) {
+	public AgentWebJsInterfaceCompat(AgentWeb agentWeb, Activity activity) {
 		mReference = new WeakReference<AgentWeb>(agentWeb);
 		mActivityWeakReference = new WeakReference<Activity>(activity);
 	}

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.video;
 
 /**
  * @author cenxiaozhong
+ * @date 2017/6/3
+ * @since 1.0.0
  */
-public interface WebSecurityController<T> {
-
-    void check(T t);
-
+public interface EventInterceptor {
+    boolean event();
 }

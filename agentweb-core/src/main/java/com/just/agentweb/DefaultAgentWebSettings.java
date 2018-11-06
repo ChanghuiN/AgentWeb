@@ -76,7 +76,7 @@ public class DefaultAgentWebSettings implements IAgentWebSettings, WebListenerMa
 		mWebSettings.setJavaScriptEnabled(true);
 		mWebSettings.setSupportZoom(true);
 		mWebSettings.setBuiltInZoomControls(false);
-		mWebSettings.setSavePassword(false);
+		mWebSettings.setSavePassword(false);	// 关闭明文存储密码
 		if (AgentWebUtils.checkNetwork(webView.getContext())) {
 			//根据cache-control获取数据。
 			mWebSettings.setCacheMode(WebSettings.LOAD_DEFAULT);

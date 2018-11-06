@@ -19,6 +19,7 @@ package com.just.agentweb.js;
 import android.webkit.WebView;
 
 import com.just.agentweb.AgentWeb;
+import com.just.agentweb.security.SecurityType;
 import com.just.agentweb.utils.LogUtils;
 
 import java.util.Map;
@@ -33,15 +34,15 @@ public class JsInterfaceHolderImpl extends JsBaseInterfaceHolder {
 
 	private static final String TAG = JsInterfaceHolderImpl.class.getSimpleName();
 	private WebView mWebView;
-	private AgentWeb.SecurityType mSecurityType;
+	private SecurityType mSecurityType;
 
-	public static JsInterfaceHolderImpl getJsInterfaceHolder(WebView webView, AgentWeb.SecurityType securityType) {
+	public static JsInterfaceHolderImpl getJsInterfaceHolder(WebView webView, SecurityType securityType) {
 
 		return new JsInterfaceHolderImpl(webView, securityType);
 	}
 
 
-	JsInterfaceHolderImpl(WebView webView, AgentWeb.SecurityType securityType) {
+	JsInterfaceHolderImpl(WebView webView, SecurityType securityType) {
 		super(securityType);
 		this.mWebView = webView;
 		this.mSecurityType = securityType;

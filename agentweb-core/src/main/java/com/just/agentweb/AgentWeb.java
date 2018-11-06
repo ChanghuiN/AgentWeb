@@ -32,13 +32,20 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.just.agentweb.chromeclient.DefaultChromeClient;
+import com.just.agentweb.client.DefaultChromeClient;
+import com.just.agentweb.filechooser.AgentWebJsInterfaceCompat;
 import com.just.agentweb.js.JsAccessEntrace;
 import com.just.agentweb.js.JsAccessEntraceImpl;
 import com.just.agentweb.js.JsInterfaceHolder;
 import com.just.agentweb.js.JsInterfaceHolderImpl;
+import com.just.agentweb.security.SecurityType;
+import com.just.agentweb.security.WebSecurityController;
+import com.just.agentweb.security.WebSecurityControllerImpl;
 import com.just.agentweb.utils.AgentWebUtils;
 import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.video.EventHandlerImpl;
+import com.just.agentweb.video.EventInterceptor;
+import com.just.agentweb.video.IEventHandler;
 import com.just.agentweb.video.IVideo;
 import com.just.agentweb.video.VideoImpl;
 import com.just.agentweb.view.AbsAgentWebUIController;
@@ -52,7 +59,7 @@ import com.just.agentweb.view.IndicatorHandler;
 import com.just.agentweb.view.WebCreator;
 import com.just.agentweb.view.WebLifeCycle;
 import com.just.agentweb.view.WebParentLayout;
-import com.just.agentweb.webviewclient.DefaultWebClient;
+import com.just.agentweb.client.DefaultWebClient;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;
@@ -122,11 +129,11 @@ public final class AgentWeb {
 	/**
 	 * 安全 Controller
 	 */
-	private WebSecurityController<WebSecurityCheckLogic> mWebSecurityController = null;
-	/**
-	 * WebSecurityCheckLogic
-	 */
-	private WebSecurityCheckLogic mWebSecurityCheckLogic = null;
+	private WebSecurityController mWebSecurityController = null;
+//	/**
+//	 * WebSecurityCheckLogic
+//	 */
+//	private WebSecurityCheckLogic mWebSecurityCheckLogic = null;
 	/**
 	 * WebChromeClient
 	 */
@@ -365,11 +372,11 @@ public final class AgentWeb {
 
 	private void doSafeCheck() {
 
-		WebSecurityCheckLogic mWebSecurityCheckLogic = this.mWebSecurityCheckLogic;
-		if (mWebSecurityCheckLogic == null) {
-			this.mWebSecurityCheckLogic = mWebSecurityCheckLogic = WebSecurityLogicImpl.getInstance();
-		}
-		mWebSecurityController.check(mWebSecurityCheckLogic);
+//		WebSecurityCheckLogic mWebSecurityCheckLogic = this.mWebSecurityCheckLogic;
+//		if (mWebSecurityCheckLogic == null) {
+//			this.mWebSecurityCheckLogic = mWebSecurityCheckLogic = WebSecurityLogicImpl.getInstance();
+//		}
+		mWebSecurityController.check();
 
 	}
 
@@ -513,12 +520,6 @@ public final class AgentWeb {
 			return this.mTargetChromeClient = mDefaultChromeClient;
 //		}
 	}
-
-
-	public enum SecurityType {
-		DEFAULT_CHECK, STRICT_CHECK;
-	}
-
 
 	public static final class AgentBuilder {
 		private Activity mActivity;
