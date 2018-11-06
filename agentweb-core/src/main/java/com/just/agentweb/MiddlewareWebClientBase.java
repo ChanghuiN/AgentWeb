@@ -27,10 +27,10 @@ public class MiddlewareWebClientBase extends WebViewClientDelegate {
     private MiddlewareWebClientBase mMiddleWrareWebClientBase;
     private static String TAG = MiddlewareWebClientBase.class.getSimpleName();
 
-    MiddlewareWebClientBase(MiddlewareWebClientBase client) {
-        super(client);
-        this.mMiddleWrareWebClientBase = client;
-    }
+//    MiddlewareWebClientBase(MiddlewareWebClientBase client) {
+//        super(client);
+//        this.mMiddleWrareWebClientBase = client;
+//    }
 
     protected MiddlewareWebClientBase(WebViewClient client) {
         super(client);

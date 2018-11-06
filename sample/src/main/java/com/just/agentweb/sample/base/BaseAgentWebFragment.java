@@ -14,8 +14,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.just.agentweb.AgentWeb;
-import com.just.agentweb.AgentWebSettingsImpl;
+//import com.just.agentweb.AgentWebSettingsImpl;
 import com.just.agentweb.AgentWebUIControllerImplBase;
+import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.IWebLayout;
@@ -141,7 +142,7 @@ public abstract class BaseAgentWebFragment extends Fragment {
 
     protected @Nullable
     IAgentWebSettings getAgentWebSettings() {
-        return AgentWebSettingsImpl.getInstance();
+        return DefaultAgentWebSettings.getInstance();
     }
 
     protected @Nullable

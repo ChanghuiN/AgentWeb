@@ -5,8 +5,9 @@ import android.os.Build;
 import android.webkit.DownloadListener;
 import android.webkit.WebView;
 
-import com.just.agentweb.AbsAgentWebSettings;
+//import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.AgentWeb;
+import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.DefaultDownloadImpl;
@@ -15,16 +16,16 @@ import com.just.agentweb.download.DefaultDownloadImpl;
  * Created by cenxiaozhong on 2017/5/26.
  * source code  https://github.com/Justson/AgentWeb
  */
-//WebDefaultSettingsManager 重命名为 AbsAgentWebSettings 并且抽象出bindAgentWebSupport方法
-public class CustomSettings extends AbsAgentWebSettings {
+//WebDefaultSettingsManager 重命名为 DefaultAgentWebSettings 并且抽象出bindAgentWebSupport方法
+public class CustomSettings extends DefaultAgentWebSettings {
     public CustomSettings() {
         super();
     }
 
-    @Override
-    protected void bindAgentWebSupport(AgentWeb agentWeb) {
-
-    }
+//    @Override
+//    protected void bindAgentWebSupport(AgentWeb agentWeb) {
+//
+//    }
 
 
     @Override

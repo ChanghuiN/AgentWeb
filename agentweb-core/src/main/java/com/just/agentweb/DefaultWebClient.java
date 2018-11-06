@@ -23,12 +23,14 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.net.http.SslError;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -187,7 +189,9 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
 	public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
 		int tag = -1;
 
-		if (AgentWebUtils.isOverriedMethod(mWebViewClient, "shouldOverrideUrlLoading", ANDROID_WEBVIEWCLIENT_PATH + ".shouldOverrideUrlLoading", WebView.class, WebResourceRequest.class) && (((tag = 1) > 0) && super.shouldOverrideUrlLoading(view, request))) {
+		if (AgentWebUtils.isOverriedMethod(mWebViewClient, "shouldOverrideUrlLoading",
+				ANDROID_WEBVIEWCLIENT_PATH + ".shouldOverrideUrlLoading", WebView.class, WebResourceRequest.class) &&
+				(((tag = 1) > 0) && super.shouldOverrideUrlLoading(view, request))) {
 			return true;
 		}
 
@@ -280,7 +284,9 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
 
 		int tag = -1;
 
-		if (AgentWebUtils.isOverriedMethod(mWebViewClient, "shouldOverrideUrlLoading", ANDROID_WEBVIEWCLIENT_PATH + ".shouldOverrideUrlLoading", WebView.class, String.class) && (((tag = 1) > 0) && super.shouldOverrideUrlLoading(view, url))) {
+		if (AgentWebUtils.isOverriedMethod(mWebViewClient, "shouldOverrideUrlLoading",
+				ANDROID_WEBVIEWCLIENT_PATH + ".shouldOverrideUrlLoading", WebView.class, String.class) &&
+				(((tag = 1) > 0) && super.shouldOverrideUrlLoading(view, url))) {
 			return true;
 		}
 
@@ -467,6 +473,11 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
 
 	}
 
+	@Override
+	public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+		// 接受所有网站的证书，忽略SSL错误，执行访问网页
+		handler.proceed();
+	}
 
 	/**
 	 * MainFrame Error
@@ -554,10 +565,7 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
 
 
 	private void startActivity(String url) {
-
-
 		try {
-
 			if (mWeakReference.get() == null) {
 				return;
 			}

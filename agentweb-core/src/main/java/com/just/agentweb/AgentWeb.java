@@ -435,13 +435,13 @@ public final class AgentWeb {
 		AgentWebConfig.initCookiesManager(mActivity.getApplicationContext());
 		IAgentWebSettings mAgentWebSettings = this.mAgentWebSettings;
 		if (mAgentWebSettings == null) {
-			this.mAgentWebSettings = mAgentWebSettings = AgentWebSettingsImpl.getInstance();
+			this.mAgentWebSettings = mAgentWebSettings = DefaultAgentWebSettings.getInstance();
 		}
 
-		if (mAgentWebSettings instanceof AbsAgentWebSettings) {
-			((AbsAgentWebSettings) mAgentWebSettings).bindAgentWeb(this);
+		if (mAgentWebSettings instanceof DefaultAgentWebSettings) {
+			((DefaultAgentWebSettings) mAgentWebSettings).bindAgentWeb(this);
 		}
-		if (mWebListenerManager == null && mAgentWebSettings instanceof AbsAgentWebSettings) {
+		if (mWebListenerManager == null && mAgentWebSettings instanceof DefaultAgentWebSettings) {
 			mWebListenerManager = (WebListenerManager) mAgentWebSettings;
 		}
 		mAgentWebSettings.toSetting(mWebCreator.getWebView());

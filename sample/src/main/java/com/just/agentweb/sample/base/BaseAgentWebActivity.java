@@ -16,8 +16,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.just.agentweb.AgentWeb;
-import com.just.agentweb.AgentWebSettingsImpl;
+//import com.just.agentweb.AgentWebSettingsImpl;
 import com.just.agentweb.AgentWebUIControllerImplBase;
+import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.IWebLayout;
@@ -60,7 +61,8 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
     protected void buildAgentWeb() {
         ErrorLayoutEntity mErrorLayoutEntity = getErrorLayoutEntity();
         mAgentWeb = AgentWeb.with(this)
-                .setAgentWebParent(getAgentWebParent(), new ViewGroup.LayoutParams(-1, -1))
+                .setAgentWebParent(getAgentWebParent(), new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
                 .useDefaultIndicator(getIndicatorColor(), getIndicatorHeight())
                 .setWebChromeClient(getWebChromeClient())
                 .setWebViewClient(getWebViewClient())
@@ -174,7 +176,7 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
 
     public @Nullable
     IAgentWebSettings getAgentWebSettings() {
-        return AgentWebSettingsImpl.getInstance();
+        return DefaultAgentWebSettings.getInstance();
     }
 
     protected abstract @NonNull

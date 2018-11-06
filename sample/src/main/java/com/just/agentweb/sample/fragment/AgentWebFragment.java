@@ -31,9 +31,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.just.agentweb.AbsAgentWebSettings;
+//import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
+//import com.just.agentweb.AgentWebSettingsImpl;
+import com.just.agentweb.DefaultAgentWebSettings;
 import com.just.agentweb.DefaultWebClient;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.LogUtils;
@@ -256,34 +258,7 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 	 * @return IAgentWebSettings
 	 */
 	public IAgentWebSettings getSettings() {
-		return new AbsAgentWebSettings() {
-			private AgentWeb mAgentWeb;
-
-			@Override
-			protected void bindAgentWebSupport(AgentWeb agentWeb) {
-				this.mAgentWeb = agentWeb;
-			}
-
-			/**
-			 * AgentWeb 4.0.0 内部删除了 DownloadListener 监听 ，以及相关API ，将 Download 部分完全抽离出来独立一个库，
-			 * 如果你需要使用 AgentWeb Download 部分 ， 请依赖上 compile 'com.just.agentweb:download:4.0.0 ，
-			 * 如果你需要监听下载结果，请自定义 AgentWebSetting ， New 出 DefaultDownloadImpl，传入DownloadListenerAdapter
-			 * 实现进度或者结果监听，例如下面这个例子，如果你不需要监听进度，或者下载结果，下面 setDownloader 的例子可以忽略。
-			 * @param webView
-			 * @param downloadListener
-			 * @return WebListenerManager
-			 */
-			@Override
-			public WebListenerManager setDownloader(WebView webView, android.webkit.DownloadListener downloadListener) {
-				return super.setDownloader(webView,
-						DefaultDownloadImpl
-								.create((Activity) webView.getContext(),
-										webView,
-										mDownloadListenerAdapter,
-										mDownloadListenerAdapter,
-										this.mAgentWeb.getPermissionInterceptor()));
-			}
-		};
+		return new DefaultAgentWebSettings();
 	}
 
 	/**
