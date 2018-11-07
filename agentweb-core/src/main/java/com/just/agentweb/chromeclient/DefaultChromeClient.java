@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.client;
+package com.just.agentweb.chromeclient;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -35,21 +35,20 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
 
-import com.just.agentweb.Action;
-import com.just.agentweb.view.ActionActivity;
-import com.just.agentweb.AgentWebPermissions;
-import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.permission.Action;
+import com.just.agentweb.permission.ActionActivity;
+import com.just.agentweb.permission.AgentWebPermissions;
+import com.just.agentweb.AgentWebUtils;
 import com.just.agentweb.video.IVideo;
-import com.just.agentweb.utils.LogUtils;
-import com.just.agentweb.PermissionInterceptor;
-import com.just.agentweb.view.AbsAgentWebUIController;
-import com.just.agentweb.view.IndicatorController;
+import com.just.agentweb.LogUtils;
+import com.just.agentweb.permission.PermissionInterceptor;
+import com.just.agentweb.view.indicator.IndicatorController;
 
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.just.agentweb.view.ActionActivity.KEY_FROM_INTENTION;
+import static com.just.agentweb.permission.ActionActivity.KEY_FROM_INTENTION;
 
 
 /**

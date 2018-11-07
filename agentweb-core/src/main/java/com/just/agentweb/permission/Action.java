@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.permission;
 
 import android.os.Parcel;
 import android.os.Parcelable;

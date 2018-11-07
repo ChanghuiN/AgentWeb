@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view;
+package com.just.agentweb.view.indicator;
 
-import android.widget.FrameLayout;
+
 
 /**
  * @author cenxiaozhong
- * @date 2017/5/12
  * @since 1.0.0
  */
-public interface LayoutParamsOffer<T extends FrameLayout.LayoutParams> {
+public interface BaseIndicatorSpec {
+    /**
+     * indicator
+     */
+    void show();
 
-    T offerLayoutParams();
+    void hide();
+
+    void reset();
+
+    void setProgress(int newProgress);
 
 }

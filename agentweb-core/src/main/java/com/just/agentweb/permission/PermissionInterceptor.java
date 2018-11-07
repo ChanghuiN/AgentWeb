@@ -14,15 +14,21 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.permission;
 
 /**
  * @author cenxiaozhong
- * @date 2017/7/5
- * @since 1.0.0
+ * @since 3.0.0
  */
-public interface Provider<T> {
+public interface PermissionInterceptor {
 
+    /**
+     * PermissionInterceptor 能达到 url1 允许授权， url2 拒绝授权的效果。
+     * @param url
+     * @param permissions
+     * @param action
+     * @return true 该Url对应页面请求权限进行拦截 ，false 表示不拦截。
+     */
+    boolean intercept(String url, String[] permissions, String action);
 
-   T provide();
 }

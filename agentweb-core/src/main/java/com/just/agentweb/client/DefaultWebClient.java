@@ -41,10 +41,10 @@ import com.alipay.sdk.app.H5PayCallback;
 import com.alipay.sdk.app.PayTask;
 import com.alipay.sdk.util.H5PayResultModel;
 import com.just.agentweb.AgentWebConfig;
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
-import com.just.agentweb.PermissionInterceptor;
-import com.just.agentweb.view.AbsAgentWebUIController;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
+import com.just.agentweb.permission.PermissionInterceptor;
+import com.just.agentweb.chromeclient.AbsAgentWebUIController;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Constructor;

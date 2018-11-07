@@ -29,14 +29,14 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.webkit.WebView;
 
-import com.just.agentweb.Action;
-import com.just.agentweb.AgentWebPermissions;
-import com.just.agentweb.PermissionInterceptor;
+import com.just.agentweb.permission.Action;
+import com.just.agentweb.permission.AgentWebPermissions;
+import com.just.agentweb.permission.PermissionInterceptor;
 import com.just.agentweb.R;
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
-import com.just.agentweb.view.AbsAgentWebUIController;
-import com.just.agentweb.view.ActionActivity;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
+import com.just.agentweb.chromeclient.AbsAgentWebUIController;
+import com.just.agentweb.permission.ActionActivity;
 
 import java.io.File;
 import java.io.Serializable;

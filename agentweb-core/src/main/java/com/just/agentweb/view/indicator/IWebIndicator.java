@@ -14,24 +14,15 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view;
-
-
+package com.just.agentweb.view.indicator;
 
 /**
  * @author cenxiaozhong
  * @since 1.0.0
+ *
+ * Indicator 创建器
  */
-public interface BaseIndicatorSpec {
-    /**
-     * indicator
-     */
-    void show();
+public interface IWebIndicator<T extends BaseIndicatorSpec> {
 
-    void hide();
-
-    void reset();
-
-    void setProgress(int newProgress);
-
+    T offer();
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view;
+package com.just.agentweb.view.indicator;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -27,7 +27,8 @@ import android.widget.FrameLayout;
  * @date 2017/5/12
  * @since 1.0.0
  */
-public abstract class BaseIndicatorView extends FrameLayout implements BaseIndicatorSpec,LayoutParamsOffer {
+public abstract class BaseIndicatorView extends FrameLayout implements BaseIndicatorSpec, LayoutParamsOffer {
+
     public BaseIndicatorView(Context context) {
         super(context);
     }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.utils;
+package com.just.agentweb;
 
 import android.util.Log;
 

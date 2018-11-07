@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view;
+package com.just.agentweb.view.indicator;
 
 import android.webkit.WebView;
 

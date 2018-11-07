@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.utils;
+package com.just.agentweb;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -60,11 +60,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-import com.just.agentweb.AgentWebConfig;
-import com.just.agentweb.PermissionInterceptor;
-import com.just.agentweb.R;
+import com.just.agentweb.permission.PermissionInterceptor;
 import com.just.agentweb.filechooser.FileChooser;
-import com.just.agentweb.view.AbsAgentWebUIController;
+import com.just.agentweb.chromeclient.AbsAgentWebUIController;
 import com.just.agentweb.view.WebParentLayout;
 
 import org.json.JSONArray;

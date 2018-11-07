@@ -14,21 +14,27 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.view.indicator;
+
+import android.webkit.WebView;
+
+import com.just.agentweb.view.indicator.BaseIndicatorSpec;
 
 /**
  * @author cenxiaozhong
- * @since 3.0.0
+ * @update 4.0.0
+ * @since 1.0.0
  */
-public interface PermissionInterceptor {
 
-    /**
-     * PermissionInterceptor 能达到 url1 允许授权， url2 拒绝授权的效果。
-     * @param url
-     * @param permissions
-     * @param action
-     * @return true 该Url对应页面请求权限进行拦截 ，false 表示不拦截。
-     */
-    boolean intercept(String url, String[] permissions, String action);
+public interface IndicatorController {
 
+    void progress(WebView v, int newProgress);
+
+    BaseIndicatorSpec offerIndicator();
+
+    void showIndicator();
+
+    void setProgress(int newProgress);
+
+    void finish();
 }

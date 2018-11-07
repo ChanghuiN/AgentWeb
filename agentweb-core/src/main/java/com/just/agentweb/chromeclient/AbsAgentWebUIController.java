@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view;
+package com.just.agentweb.chromeclient;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -22,6 +22,8 @@ import android.os.Handler;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.WebView;
+
+import com.just.agentweb.view.WebParentLayout;
 
 
 /**
@@ -62,7 +64,7 @@ public abstract class AbsAgentWebUIController {
 		return mAgentWebUIController;
 	}
 
-	final synchronized void bindWebParent(WebParentLayout webParentLayout, Activity activity) {
+	public final synchronized void bindWebParent(WebParentLayout webParentLayout, Activity activity) {
 		if (!mIsBindWebParent) {
 			mIsBindWebParent = true;
 			this.mWebParentLayout = webParentLayout;

@@ -1,7 +1,5 @@
 package com.just.agentweb.download;
 
-import com.just.agentweb.Provider;
-
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -14,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by cenxiaozhong on 2018/2/12.
  */
 
-public class ExecutorProvider implements Provider<Executor> {
+public class ExecutorProvider {
 
 
     private final int CPU_COUNT = Runtime.getRuntime().availableProcessors();
@@ -66,7 +64,6 @@ public class ExecutorProvider implements Provider<Executor> {
         private static final ExecutorProvider M_EXECUTOR_PROVIDER = new ExecutorProvider();
     }
 
-    @Override
     public Executor provide() {
         return mThreadPoolExecutor;
     }

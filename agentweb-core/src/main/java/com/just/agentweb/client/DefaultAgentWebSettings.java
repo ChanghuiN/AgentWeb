@@ -28,10 +28,9 @@ import android.webkit.WebViewClient;
 
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
-import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.DefaultDownloadImpl;
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
 
 /**
  * @author cenxiaozhong

@@ -19,8 +19,7 @@ package com.just.agentweb.view;
 import android.os.Build;
 import android.webkit.WebView;
 
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.view.WebLifeCycle;
+import com.just.agentweb.AgentWebUtils;
 
 /**
  * @author cenxiaozhong

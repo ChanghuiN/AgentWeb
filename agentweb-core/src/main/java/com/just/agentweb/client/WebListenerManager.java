@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb;
+package com.just.agentweb.client;
 
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view;
+package com.just.agentweb.chromeclient;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -29,9 +29,10 @@ import android.webkit.JsResult;
 import android.webkit.WebView;
 import android.widget.EditText;
 
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
 import com.just.agentweb.R;
+import com.just.agentweb.view.WebParentLayout;
 
 
 /**

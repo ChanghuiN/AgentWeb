@@ -35,8 +35,8 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.just.agentweb.js.JsCallJava;
-import com.just.agentweb.utils.LogUtils;
-import com.just.agentweb.client.WebChromeClientDelegate;
+import com.just.agentweb.LogUtils;
+import com.just.agentweb.chromeclient.WebChromeClientDelegate;
 import com.just.agentweb.client.WebViewClientDelegate;
 
 import org.json.JSONObject;
@@ -67,7 +67,6 @@ public class AgentWebView extends WebView {
 
     public AgentWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        removeSearchBoxJavaBridge();
         mIsInited = true;
         mFixedOnReceivedTitle = new FixedOnReceivedTitle();
     }
@@ -462,25 +461,6 @@ public class AgentWebView extends WebView {
             }
         }
     }
-
-
-    @TargetApi(11)
-    protected boolean removeSearchBoxJavaBridge() {
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB
-                    && Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                Method method = this.getClass().getMethod("removeJavascriptInterface", String.class);
-                method.invoke(this, "searchBoxJavaBridge_");
-                return true;
-            }
-        } catch (Exception e) {
-            if (LogUtils.isDebug()) {
-                e.printStackTrace();
-            }
-        }
-        return false;
-    }
-
 
     protected void fixedAccessibilityInjectorException() {
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.JELLY_BEAN_MR1

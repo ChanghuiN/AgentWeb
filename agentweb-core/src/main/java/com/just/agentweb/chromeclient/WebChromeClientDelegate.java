@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.client;
+package com.just.agentweb.chromeclient;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -32,7 +32,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
 
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.LogUtils;
 
 import java.lang.reflect.Method;
 

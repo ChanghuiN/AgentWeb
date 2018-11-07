@@ -19,6 +19,8 @@ package com.just.agentweb.view;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 
+import com.just.agentweb.view.indicator.IWebIndicator;
+
 /**
  * @author cenxiaozhong
  * @since 1.0.0

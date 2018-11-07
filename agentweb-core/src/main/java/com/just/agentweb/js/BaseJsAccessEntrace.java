@@ -20,7 +20,7 @@ import android.os.Build;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
 
-import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.AgentWebUtils;
 
 /**
  * @author cenxiaozhong

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view;
+package com.just.agentweb.permission;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,9 +24,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.just.agentweb.Action;
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
 
 import java.io.File;
 import java.util.List;
@@ -38,6 +37,8 @@ import static android.provider.MediaStore.EXTRA_OUTPUT;
 /**
  * @since 2.0.0
  * @author cenxiaozhong
+ *
+ * 申请权限 Activity
  */
 public final class ActionActivity extends Activity {
 

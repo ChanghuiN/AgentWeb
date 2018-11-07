@@ -8,7 +8,7 @@ import android.webkit.WebView;
 //import com.just.agentweb.client.DefaultAgentWebSettings;
 import com.just.agentweb.client.DefaultAgentWebSettings;
 import com.just.agentweb.client.IAgentWebSettings;
-import com.just.agentweb.WebListenerManager;
+import com.just.agentweb.client.WebListenerManager;
 import com.just.agentweb.download.DefaultDownloadImpl;
 
 /**

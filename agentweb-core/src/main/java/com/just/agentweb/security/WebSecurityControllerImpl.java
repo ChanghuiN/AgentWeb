@@ -21,7 +21,7 @@ import android.support.v4.util.ArrayMap;
 import android.webkit.WebView;
 
 import com.just.agentweb.AgentWebConfig;
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.LogUtils;
 
 
 /**
@@ -43,6 +43,7 @@ public class WebSecurityControllerImpl implements WebSecurityController {
 
     @Override
     public void check() {
+        LogUtils.i(TAG, "check --- ");
 
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.HONEYCOMB) {
             if (Build.VERSION_CODES.HONEYCOMB > Build.VERSION.SDK_INT || Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR1) {

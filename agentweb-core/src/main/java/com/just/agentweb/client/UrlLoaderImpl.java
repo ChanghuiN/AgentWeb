@@ -20,7 +20,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.webkit.WebView;
 
-import com.just.agentweb.utils.AgentWebUtils;
+import com.just.agentweb.AgentWebUtils;
 
 import java.util.Map;
 

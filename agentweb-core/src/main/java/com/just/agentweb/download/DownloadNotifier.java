@@ -29,8 +29,8 @@ import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 
 import com.just.agentweb.R;
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
 
 import java.io.File;
 import java.lang.reflect.Field;

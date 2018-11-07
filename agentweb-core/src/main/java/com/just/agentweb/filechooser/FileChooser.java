@@ -33,15 +33,15 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import com.just.agentweb.Action;
+import com.just.agentweb.permission.Action;
 import com.just.agentweb.AgentWebConfig;
-import com.just.agentweb.AgentWebPermissions;
-import com.just.agentweb.PermissionInterceptor;
+import com.just.agentweb.permission.AgentWebPermissions;
+import com.just.agentweb.permission.PermissionInterceptor;
 import com.just.agentweb.R;
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
-import com.just.agentweb.view.AbsAgentWebUIController;
-import com.just.agentweb.view.ActionActivity;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
+import com.just.agentweb.chromeclient.AbsAgentWebUIController;
+import com.just.agentweb.permission.ActionActivity;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -63,11 +63,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import static com.just.agentweb.view.ActionActivity.KEY_ACTION;
-import static com.just.agentweb.view.ActionActivity.KEY_FILE_CHOOSER_INTENT;
-import static com.just.agentweb.view.ActionActivity.KEY_FROM_INTENTION;
-import static com.just.agentweb.view.ActionActivity.KEY_URI;
-import static com.just.agentweb.view.ActionActivity.start;
+import static com.just.agentweb.permission.ActionActivity.KEY_ACTION;
+import static com.just.agentweb.permission.ActionActivity.KEY_FILE_CHOOSER_INTENT;
+import static com.just.agentweb.permission.ActionActivity.KEY_FROM_INTENTION;
+import static com.just.agentweb.permission.ActionActivity.KEY_URI;
+import static com.just.agentweb.permission.ActionActivity.start;
 
 /**
  * @author cenxiaozhong

@@ -30,7 +30,6 @@ import com.just.agentweb.view.AgentWebView;
  * @author LeonDevLifeLog
  * @since 4.0.0
  */
-
 public class NestedScrollAgentWebView extends AgentWebView implements NestedScrollingChild {
 
     private int mLastMotionY;

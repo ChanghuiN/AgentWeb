@@ -20,7 +20,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.LogUtils;
 
 /**
  * @author cenxiaozhong

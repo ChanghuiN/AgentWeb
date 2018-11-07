@@ -20,7 +20,7 @@ import android.content.Context;
 import android.support.annotation.DrawableRes;
 
 import com.just.agentweb.R;
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.LogUtils;
 
 import java.io.File;
 import java.io.Serializable;

@@ -28,9 +28,12 @@ import android.webkit.WebView;
 import android.widget.FrameLayout;
 
 import com.just.agentweb.AgentWebConfig;
-import com.just.agentweb.utils.AgentWebUtils;
-import com.just.agentweb.utils.LogUtils;
+import com.just.agentweb.AgentWebUtils;
+import com.just.agentweb.LogUtils;
 import com.just.agentweb.R;
+import com.just.agentweb.view.indicator.BaseIndicatorSpec;
+import com.just.agentweb.view.indicator.BaseIndicatorView;
+import com.just.agentweb.view.indicator.WebIndicator;
 
 /**
  * @author cenxiaozhong
