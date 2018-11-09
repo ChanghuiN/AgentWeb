@@ -18,8 +18,6 @@ package com.just.agentweb.view.indicator;
 
 import android.webkit.WebView;
 
-import com.just.agentweb.view.indicator.BaseIndicatorSpec;
-
 /**
  * @author cenxiaozhong
  * @update 4.0.0

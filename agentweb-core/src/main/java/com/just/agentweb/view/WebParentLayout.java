@@ -32,7 +32,7 @@ import android.webkit.WebView;
 import android.widget.FrameLayout;
 
 import com.just.agentweb.R;
-import com.just.agentweb.chromeclient.AbsAgentWebUIController;
+import com.just.agentweb.webclient.AbsAgentWebUIController;
 import com.just.agentweb.LogUtils;
 
 /**

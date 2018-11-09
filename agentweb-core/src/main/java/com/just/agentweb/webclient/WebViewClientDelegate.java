@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.client;
+package com.just.agentweb.webclient;
 
 import android.graphics.Bitmap;
 import android.net.http.SslError;
@@ -37,7 +37,7 @@ import android.webkit.WebViewClient;
 public class WebViewClientDelegate extends WebViewClient {
 
 
-    private WebViewClient mDelegate;
+    protected WebViewClient mDelegate;
     private static final String TAG = WebViewClientDelegate.class.getSimpleName();
 
     protected WebViewClientDelegate(WebViewClient client) {

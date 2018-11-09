@@ -27,7 +27,7 @@ import android.widget.FrameLayout;
  * @date 2017/5/12
  * @since 1.0.0
  */
-public abstract class BaseIndicatorView extends FrameLayout implements BaseIndicatorSpec, LayoutParamsOffer {
+public abstract class BaseIndicatorView extends FrameLayout implements BaseIndicatorSpec {
 
     public BaseIndicatorView(Context context) {
         super(context);
@@ -60,5 +60,7 @@ public abstract class BaseIndicatorView extends FrameLayout implements BaseIndic
     public void hide() {
 
     }
+
+    public abstract LayoutParams offerLayoutParams();
 
 }

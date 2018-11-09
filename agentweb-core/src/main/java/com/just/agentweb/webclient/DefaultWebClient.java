@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.client;
+package com.just.agentweb.webclient;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -44,7 +44,6 @@ import com.just.agentweb.AgentWebConfig;
 import com.just.agentweb.AgentWebUtils;
 import com.just.agentweb.LogUtils;
 import com.just.agentweb.permission.PermissionInterceptor;
-import com.just.agentweb.chromeclient.AbsAgentWebUIController;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Constructor;

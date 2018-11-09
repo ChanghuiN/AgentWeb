@@ -62,7 +62,7 @@ import android.widget.Toast;
 
 import com.just.agentweb.permission.PermissionInterceptor;
 import com.just.agentweb.filechooser.FileChooser;
-import com.just.agentweb.chromeclient.AbsAgentWebUIController;
+import com.just.agentweb.webclient.AbsAgentWebUIController;
 import com.just.agentweb.view.WebParentLayout;
 
 import org.json.JSONArray;
@@ -388,6 +388,10 @@ public class AgentWebUtils {
         return info != null && info.isConnected();
     }
 
+    /**
+     * 判断子类是否覆盖了此方法
+     * @return true or no
+     */
     public static boolean isOverriedMethod(Object currentObject, String methodName, String method, Class... clazzs) {
         LogUtils.i(TAG, "  methodName:" + methodName + "   method:" + method);
         boolean tag = false;

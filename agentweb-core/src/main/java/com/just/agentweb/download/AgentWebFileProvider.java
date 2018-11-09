@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.view.indicator;
+package com.just.agentweb.download;
 
-import android.widget.FrameLayout;
+import android.support.v4.content.FileProvider;
 
 /**
+ * @since 2.0.0
  * @author cenxiaozhong
- * @date 2017/5/12
- * @since 1.0.0
  */
-public interface LayoutParamsOffer<T extends FrameLayout.LayoutParams> {
-
-    T offerLayoutParams();
-
+public class AgentWebFileProvider extends FileProvider {
 }

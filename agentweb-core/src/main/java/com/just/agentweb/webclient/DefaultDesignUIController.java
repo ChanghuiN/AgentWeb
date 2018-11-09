@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.chromeclient;
+package com.just.agentweb.webclient;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -76,7 +76,7 @@ public class DefaultDesignUIController extends DefaultUIController {
                     -1,
                     null);
         } catch (Throwable throwable) {
-            if (LogUtils.isDebug()){
+            if (LogUtils.isDebug()) {
                 throwable.printStackTrace();
             }
         }
@@ -100,7 +100,6 @@ public class DefaultDesignUIController extends DefaultUIController {
     }
 
     private void showChooserInternal(WebView view, String url, final String[] ways, final Handler.Callback callback) {
-
 
         LogUtils.i(TAG, "url:" + url + "  ways:" + ways[0]);
         RecyclerView mRecyclerView;

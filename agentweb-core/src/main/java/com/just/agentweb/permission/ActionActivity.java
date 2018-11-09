@@ -38,7 +38,9 @@ import static android.provider.MediaStore.EXTRA_OUTPUT;
  * @since 2.0.0
  * @author cenxiaozhong
  *
- * 申请权限 Activity
+ * 1. 申请权限
+ * 2. 调用系统相机
+ * 3. 调用文件选择器
  */
 public final class ActionActivity extends Activity {
 

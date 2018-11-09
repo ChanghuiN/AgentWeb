@@ -35,7 +35,7 @@ import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
 //import com.just.agentweb.AgentWebSettingsImpl;
 import com.just.agentweb.client.DefaultAgentWebSettings;
-import com.just.agentweb.client.DefaultWebClient;
+import com.just.agentweb.webclient.DefaultWebClient;
 import com.just.agentweb.client.IAgentWebSettings;
 import com.just.agentweb.security.SecurityType;
 import com.just.agentweb.LogUtils;

@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.client.DefaultAgentWebSettings;
-import com.just.agentweb.client.DefaultWebClient;
+import com.just.agentweb.webclient.DefaultWebClient;
 import com.just.agentweb.sample.widget.CoolIndicatorLayout;
 import com.just.agentweb.security.SecurityType;
 

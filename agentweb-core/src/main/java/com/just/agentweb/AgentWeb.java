@@ -52,8 +52,8 @@ import com.just.agentweb.video.EventInterceptor;
 import com.just.agentweb.video.IEventHandler;
 import com.just.agentweb.video.IVideo;
 import com.just.agentweb.video.VideoImpl;
-import com.just.agentweb.chromeclient.AbsAgentWebUIController;
-import com.just.agentweb.chromeclient.AgentWebUIControllerImplBase;
+import com.just.agentweb.webclient.AbsAgentWebUIController;
+import com.just.agentweb.webclient.AgentWebUIControllerImplBase;
 import com.just.agentweb.view.indicator.BaseIndicatorView;
 import com.just.agentweb.view.DefaultWebCreator;
 import com.just.agentweb.view.DefaultWebLifeCycleImpl;
@@ -63,7 +63,7 @@ import com.just.agentweb.view.indicator.IndicatorHandler;
 import com.just.agentweb.view.WebCreator;
 import com.just.agentweb.view.WebLifeCycle;
 import com.just.agentweb.view.WebParentLayout;
-import com.just.agentweb.client.DefaultWebClient;
+import com.just.agentweb.webclient.DefaultWebClient;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;
@@ -496,10 +496,9 @@ public final class AgentWeb {
     }
 
     private WebChromeClient getChromeClient() {
-        IndicatorController mIndicatorController =
-                (this.mIndicatorController == null) ?
-                        IndicatorHandler.getInstance().inJectIndicator(mWebCreator.offer())
-                        : this.mIndicatorController;
+        IndicatorController mIndicatorController = (this.mIndicatorController == null) ?
+                IndicatorHandler.getInstance().inJectIndicator(mWebCreator.offer())
+                : this.mIndicatorController;
 
         DefaultChromeClient mDefaultChromeClient =
                 new DefaultChromeClient(this.mActivity,

@@ -18,25 +18,30 @@ package com.just.agentweb.view.indicator;
 
 import android.webkit.WebView;
 
+import com.just.agentweb.LogUtils;
 
 /**
  * @author cenxiaozhong
  * @since 1.0.0
  */
 public class IndicatorHandler implements IndicatorController {
+
+	private static final String TAG = "IndicatorHandler";
+
 	private BaseIndicatorSpec mBaseIndicatorSpec;
 
 	@Override
 	public void progress(WebView v, int newProgress) {
 
+//		LogUtils.i(TAG, "newProgress --- " + newProgress);
 		if (newProgress == 0) {
 			reset();
 		} else if (newProgress > 0 && newProgress <= 10) {
 			showIndicator();
-		} else if (newProgress > 10 && newProgress < 95) {
+		} else if (newProgress > 10 && newProgress < 100) {
 			setProgress(newProgress);
-		} else {
-			setProgress(newProgress);
+		}
+		if (newProgress == 100) {
 			finish();
 		}
 

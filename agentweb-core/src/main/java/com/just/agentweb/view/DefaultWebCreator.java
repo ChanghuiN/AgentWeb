@@ -201,7 +201,7 @@ public class DefaultWebCreator implements WebCreator {
             FrameLayout.LayoutParams lp = null;
             WebIndicator mWebIndicator = new WebIndicator(mActivity);
             if (mHeight > 0) {
-                lp = new FrameLayout.LayoutParams(-2, AgentWebUtils.dp2px(mActivity, mHeight));
+                lp = new FrameLayout.LayoutParams(-1, AgentWebUtils.dp2px(mActivity, mHeight));
             } else {
                 lp = mWebIndicator.offerLayoutParams();
             }

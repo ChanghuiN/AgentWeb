@@ -1,4 +1,8 @@
 
 
+带改进：
+1. 进度条可设置资源 id
+
+
 
 1. DefaultAgentWebSettings 下载器为反射

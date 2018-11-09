@@ -332,36 +332,36 @@ public class WebChromeClientDelegate extends WebChromeClient {
 
 
     // Android  >= 4.1
-    public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType, String capture) {
-        commonRefect(this.mDelegate, "openFileChooser", new Object[]{uploadFile, acceptType, capture}, ValueCallback.class, String.class, String.class);
-    }
+//    public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType, String capture) {
+//        commonRefect(this.mDelegate, "openFileChooser", new Object[]{uploadFile, acceptType, capture}, ValueCallback.class, String.class, String.class);
+//    }
 
     //  Android < 3.0
-    public void openFileChooser(ValueCallback<Uri> valueCallback) {
-        commonRefect(this.mDelegate, "openFileChooser", new Object[]{valueCallback}, ValueCallback.class);
-    }
+//    public void openFileChooser(ValueCallback<Uri> valueCallback) {
+//        commonRefect(this.mDelegate, "openFileChooser", new Object[]{valueCallback}, ValueCallback.class);
+//    }
 
     //  Android  >= 3.0
-    public void openFileChooser(ValueCallback valueCallback, String acceptType) {
-        commonRefect(this.mDelegate, "openFileChooser", new Object[]{valueCallback, acceptType}, ValueCallback.class, String.class);
-    }
+//    public void openFileChooser(ValueCallback valueCallback, String acceptType) {
+//        commonRefect(this.mDelegate, "openFileChooser", new Object[]{valueCallback, acceptType}, ValueCallback.class, String.class);
+//    }
 
 
-    private void commonRefect(WebChromeClient o, String mothed, Object[] os, Class... clazzs) {
-        try {
-            if (o == null) {
-                return;
-            }
-            Class<?> clazz = o.getClass();
-            Method mMethod = clazz.getMethod(mothed, clazzs);
-            mMethod.invoke(o, os);
-        } catch (Exception ignore) {
-            if (LogUtils.isDebug()) {
-                ignore.printStackTrace();
-            }
-        }
-
-    }
+//    private void commonRefect(WebChromeClient o, String mothed, Object[] os, Class... clazzs) {
+//        try {
+//            if (o == null) {
+//                return;
+//            }
+//            Class<?> clazz = o.getClass();
+//            Method mMethod = clazz.getMethod(mothed, clazzs);
+//            mMethod.invoke(o, os);
+//        } catch (Exception ignore) {
+//            if (LogUtils.isDebug()) {
+//                ignore.printStackTrace();
+//            }
+//        }
+//
+//    }
 
 
 }

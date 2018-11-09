@@ -37,7 +37,7 @@ import android.widget.Toast;
 import com.just.agentweb.js.JsCallJava;
 import com.just.agentweb.LogUtils;
 import com.just.agentweb.chromeclient.WebChromeClientDelegate;
-import com.just.agentweb.client.WebViewClientDelegate;
+import com.just.agentweb.webclient.WebViewClientDelegate;
 
 import org.json.JSONObject;
 
@@ -349,7 +349,7 @@ public class AgentWebView extends WebView {
 
 
     /**
-     * 解决部分手机webView返回时不触发onReceivedTitle的问题（如：三星SM-G9008V 4.4.2）；
+     * 解决部分手机webView返回时不触发 onReceivedTitle 的问题（如：三星SM-G9008V 4.4.2）；
      */
     private static class FixedOnReceivedTitle {
         private WebChromeClient mWebChromeClient;
@@ -374,9 +374,7 @@ public class AgentWebView extends WebView {
                         e.printStackTrace();
                     }
                 }
-                if (list != null
-                        && list.getSize() > 0
-                        && list.getCurrentIndex() >= 0
+                if (list != null && list.getSize() > 0 && list.getCurrentIndex() >= 0
                         && list.getItemAtIndex(list.getCurrentIndex()) != null) {
                     String previousTitle = list.getItemAtIndex(list.getCurrentIndex()).getTitle();
                     mWebChromeClient.onReceivedTitle(view, previousTitle);

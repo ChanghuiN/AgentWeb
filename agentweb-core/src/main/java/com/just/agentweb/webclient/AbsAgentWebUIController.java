@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.just.agentweb.chromeclient;
+package com.just.agentweb.webclient;
 
 import android.app.Activity;
 import android.app.Dialog;
