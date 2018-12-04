@@ -124,7 +124,7 @@ public class DefaultChromeClient extends WebChromeClientDelegate {
                                WebChromeClient chromeClient,
                                @Nullable IVideo iVideo,
                                PermissionInterceptor permissionInterceptor, WebView webView) {
-        super(chromeClient);
+        setDelegate(chromeClient);
         this.mIndicatorController = indicatorController;
         mIsWrapper = chromeClient != null ? true : false;
         this.mWebChromeClient = chromeClient;
@@ -156,9 +156,8 @@ public class DefaultChromeClient extends WebChromeClientDelegate {
     @Override
     public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
 
-
-        if (AgentWebUtils.isOverriedMethod(mWebChromeClient, "onJsAlert", "public boolean " + ANDROID_WEBCHROMECLIENT_PATH + ".onJsAlert", WebView.class, String.class, String.class, JsResult.class)) {
-            return super.onJsAlert(view, url, message, result);
+        if (super.onJsAlert(view, url, message, result)) {
+            return true;
         }
 
         if (mAgentWebUIController.get() != null) {
@@ -327,6 +326,7 @@ public class DefaultChromeClient extends WebChromeClientDelegate {
         return openFileChooserAboveL(webView, filePathCallback, fileChooserParams);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private boolean openFileChooserAboveL(WebView webView, ValueCallback<Uri[]> valueCallbacks, FileChooserParams fileChooserParams) {
 
         LogUtils.i(TAG, "fileChooserParams:" + fileChooserParams.getAcceptTypes() + "  getTitle:" + fileChooserParams.getTitle() + " accept:" + Arrays.toString(fileChooserParams.getAcceptTypes()) + " length:" + fileChooserParams.getAcceptTypes().length + "  :" + fileChooserParams.isCaptureEnabled() + "  " + fileChooserParams.getFilenameHint() + "  intent:" + fileChooserParams.createIntent().toString() + "   mode:" + fileChooserParams.getMode());
